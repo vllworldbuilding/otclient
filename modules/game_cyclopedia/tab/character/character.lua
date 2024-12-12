@@ -643,22 +643,22 @@ function Cyclopedia.loadCharacterCombatStats(data, mitigation, additionalSkillsA
     local skill = additionalSkillsArray[skillIndex][2]
     skill = additionalSkillsArray[skillIndex][2]
     if skill > 0 then
-        UI.CombatStats.manaLeech.value:setColor("#44AD25")
-        UI.CombatStats.manaLeech.value:setText(string.format("%.2f%%", skill / 100))
+        UI.CombatStats.criticalChance.value:setColor("#44AD25")
+        UI.CombatStats.criticalChance.value:setText(string.format("%.2f%%", skill / 100))
     else
-        UI.CombatStats.manaLeech.value:setColor("#C0C0C0")
-        UI.CombatStats.manaLeech.value:setText(string.format("%d%%", skill))
+        UI.CombatStats.criticalChance.value:setColor("#C0C0C0")
+        UI.CombatStats.criticalChance.value:setText(string.format("%d%%", skill))
     end
 
     -- Critical Damage
     skillIndex = skillsIndexes[Skill.CriticalDamage]
     skill = additionalSkillsArray[skillIndex][2]
     if skill > 0 then
-        UI.CombatStats.manaLeech.value:setColor("#44AD25")
-        UI.CombatStats.manaLeech.value:setText(string.format("%.2f%%", skill / 100))
+        UI.CombatStats.criticalDamage.value:setColor("#44AD25")
+        UI.CombatStats.criticalDamage.value:setText(string.format("%.2f%%", skill / 100))
     else
-        UI.CombatStats.manaLeech.value:setColor("#C0C0C0")
-        UI.CombatStats.manaLeech.value:setText(string.format("%d%%", skill))
+        UI.CombatStats.criticalDamage.value:setColor("#C0C0C0")
+        UI.CombatStats.criticalDamage.value:setText(string.format("%d%%", skill))
     end
 
     -- Life Leech Amount
@@ -847,8 +847,8 @@ function Cyclopedia.loadCharacterGeneralStats(data, skills)
     Cyclopedia.setCharacterSkillPercent("magiclevel", data.magicLevelPercent / 100,
         tr("You have %s percent to go", 100 - data.magicLevelPercent / 100))
     Cyclopedia.setCharacterSkillBase("magiclevel", data.magicLevel, data.baseMagicLevel)
-
-    for i = Skill.Fist + 1, Skill.Wisdom + 1 do
+--XXXXX
+    for i = Skill.Fist + 1, Skill.Archaeology + 1 do
         local skillLevel, baseSkill, skillPercent = unpack(skills[i])
         Cyclopedia.onSkillChange(player, i - 1, skillLevel, skillPercent)
         Cyclopedia.onBaseCharacterSkillChange(player, i - 1, baseSkill)
