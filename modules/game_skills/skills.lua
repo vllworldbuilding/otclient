@@ -125,7 +125,7 @@ function setSkillValue(id, value)
     local skill = skillsWindow:recursiveGetChildById(id)
     if skill then
         local widget = skill:getChildById('value')
-        if id == "skillId7" or id == "skillId8" or id == "skillId9" or id == "skillId11" or id == "skillId13" or id == "skillId14" or id == "skillId15" or id == "skillId16" then
+        if id == "skillId21" or id == "skillId22" or id == "skillId23" or id == "skillId24" or id == "skillId25" or id == "skillId26" or id == "skillId27" or id == "skillId28" or id == "skillId29" or id == "skillId30" then
             if g_game.getFeature(GameEnterGameShowAppearance) then
                 value = value / 100
             end

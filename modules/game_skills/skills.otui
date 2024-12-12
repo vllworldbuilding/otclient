@@ -217,67 +217,207 @@ MiniWindow
         image-source: /images/icons/icon_fishing
         image-size: 9 9
       SkillPercentPanel
+
+    SkillButton
+      id: skillId7
+      SkillNameLabel
+        !text: tr('Mining')
+      SkillValueLabel
+      ImageSkill
+        image-source: /images/icons/icon_fishing
+        image-size: 9 9
+      SkillPercentPanel
+
+    SkillButton
+      id: skillId8
+      SkillNameLabel
+        !text: tr('Smithing')
+      SkillValueLabel
+      ImageSkill
+        image-source: /images/icons/icon_fishing
+        image-size: 9 9
+      SkillPercentPanel
+
+    SkillButton
+      id: skillId9
+      SkillNameLabel
+        !text: tr('Enchanting')
+      SkillValueLabel
+      ImageSkill
+        image-source: /images/icons/icon_fishing
+        image-size: 9 9
+      SkillPercentPanel
+
+    SkillButton
+      id: skillId10
+      SkillNameLabel
+        !text: tr('Woodcutting')
+      SkillValueLabel
+      ImageSkill
+        image-source: /images/icons/icon_fishing
+        image-size: 9 9
+      SkillPercentPanel
+
+    SkillButton
+      id: skillId11
+      SkillNameLabel
+        !text: tr('Fletching')
+      SkillValueLabel
+      ImageSkill
+        image-source: /images/icons/icon_fishing
+        image-size: 9 9
+      SkillPercentPanel
+
+    SkillButton
+      id: skillId12
+      SkillNameLabel
+        !text: tr('Hunting')
+      SkillValueLabel
+      ImageSkill
+        image-source: /images/icons/icon_fishing
+        image-size: 9 9
+      SkillPercentPanel
+
+    SkillButton
+      id: skillId13
+      SkillNameLabel
+        !text: tr('Farming')
+      SkillValueLabel
+      ImageSkill
+        image-source: /images/icons/icon_fishing
+        image-size: 9 9
+      SkillPercentPanel
+
+    SkillButton
+      id: skillId14
+      SkillNameLabel
+        !text: tr('Cooking')
+      SkillValueLabel
+      ImageSkill
+        image-source: /images/icons/icon_fishing
+        image-size: 9 9
+      SkillPercentPanel
+
+    SkillButton
+      id: skillId15
+      SkillNameLabel
+        !text: tr('Crafting')
+      SkillValueLabel
+      ImageSkill
+        image-source: /images/icons/icon_fishing
+        image-size: 9 9
+      SkillPercentPanel
+
+    SkillButton
+      id: skillId16
+      SkillNameLabel
+        !text: tr('Herblore')
+      SkillValueLabel
+      ImageSkill
+        image-source: /images/icons/icon_fishing
+        image-size: 9 9
+      SkillPercentPanel
+
+    SkillButton
+      id: skillId17
+      SkillNameLabel
+        !text: tr('Alchemy')
+      SkillValueLabel
+      ImageSkill
+        image-source: /images/icons/icon_fishing
+        image-size: 9 9
+      SkillPercentPanel
+
+    SkillButton
+      id: skillId18
+      SkillNameLabel
+        !text: tr('Archaeology')
+      SkillValueLabel
+      ImageSkill
+        image-source: /images/icons/icon_fishing
+        image-size: 9 9
+      SkillPercentPanel
+
+    SkillButton
+      id: skillId19
+      SkillNameLabel
+        !text: tr('Music')
+      SkillValueLabel
+      ImageSkill
+        image-source: /images/icons/icon_fishing
+        image-size: 9 9
+      SkillPercentPanel
+
+    SkillButton
+      id: skillId20
+      SkillNameLabel
+        !text: tr('Wisdom')
+      SkillValueLabel
+      ImageSkill
+        image-source: /images/icons/icon_fishing
+        image-size: 9 9
+      SkillPercentPanel
         
     HorizontalSeparator
       margin-top: 5
       margin-bottom: 5
 
     SmallSkillButton
-      id: skillId7
+      id: skillId21
       SkillNameLabel
         !text: tr('Critical Hit Chance')
       SkillValueLabel
 
     SmallSkillButton
-      id: skillId8
+      id: skillId22
       SkillNameLabel
         !text: tr('Critical Hit Damage')
       SkillValueLabel
 
     SmallSkillButton
-      id: skillId9
+      id: skillId23
       SkillNameLabel
         !text: tr('Life Leech Chance')
       SkillValueLabel
 
     SmallSkillButton
-      id: skillId10
+      id: skillId24
       SkillNameLabel
         !text: tr('Life Leech Amount')
       SkillValueLabel
 
     SmallSkillButton
-      id: skillId11
+      id: skillId25
       SkillNameLabel
         !text: tr('Mana Leech Chance')
       SkillValueLabel
 
     SmallSkillButton
-      id: skillId12
+      id: skillId26
       SkillNameLabel
         !text: tr('Mana Leech Amount')
       SkillValueLabel
 
     SmallSkillButton
-      id: skillId13
+      id: skillId27
       SkillNameLabel
         !text: tr('Fatal')
       SkillValueLabel
 
     SmallSkillButton
-      id: skillId14
+      id: skillId28
       SkillNameLabel
         !text: tr('Dodge')
       SkillValueLabel
 
     SmallSkillButton
-      id: skillId15
+      id: skillId29
       SkillNameLabel
         !text: tr('Momentum')
       SkillValueLabel
 
     SmallSkillButton
-      id: skillId16
+      id: skillId30
       SkillNameLabel
         !text: tr('Transcendence')
       SkillValueLabel
