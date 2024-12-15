@@ -1,28 +1,27 @@
 ShowOffWidget < UIWidget
-  size: 1020 1000
-  anchors.left: parent.left
-  anchors.top: parent.top
+  anchors.fill: parent
 
   Label
     id: image
     size: 64 64
     anchors.left: parent.left
     anchors.top: parent.top
+    margin-top: 28
     margin-left: 10
     image-auto-resize: true
+    opacity: 0.9
 
-  UITextEdit
+  Label
     id: description
-    size: 476 0
     anchors.left: image.right
-    anchors.top: parent.top
+    anchors.right: parent.right
     anchors.bottom: parent.bottom
-    margin-top: 2
+    anchors.top: image.top
+    margin-top: 10
     margin-left: 10
+    margin-right: 40
     color: #c0c0c0ff
     text-wrap: true
-    text-auto-resize: true
-    selectable: true
 
 Panel
   id: bottomMenu
@@ -30,7 +29,7 @@ Panel
   anchors.bottom: parent.bottom
   anchors.horizontalCenter: parent.horizontalCenter
   image-source: /images/ui/panel_top
-  
+   
   UIWidget
     phantom: true
     anchors.bottom: parent.bottom
@@ -39,10 +38,12 @@ Panel
     text-auto-resize: true
     color: #e98d02
     margin-bottom: 110
-    text: OTClient Redemption
+    text: The Middlegard Online: Dark Flames
     font: verdana-11px-rounded
     font-scale: 4
-    shader: Map - Party
+    shader: false
+    opacity: 0.9
+    visible: false  
 
   MiniQtScrollableWindow
     id: showOffWindow
@@ -54,7 +55,7 @@ Panel
 
     Label
       id: showOffWindowText
-      !text: tr('Random Hint')
+      !text: tr('The Herald')
       font: verdana-11px-antialised
       text-offset: 0 2
       text-align: top
@@ -72,6 +73,7 @@ Panel
     margin-left: 1
     size: 246 116
     draggable: false
+    opacity: 0.6
 
     Label
       !text: tr('Event Schedule')
@@ -82,7 +84,7 @@ Panel
       anchors.bottom: parent.bottom
       anchors.left: parent.left
       anchors.right: parent.right
-      opacity: 0.5
+      opacity: 0.8
 
     UIWidget
       anchors.top: parent.top
@@ -134,6 +136,7 @@ Panel
     margin-left: 1
     size: 169 116
     draggable: false
+    opacity: 0.5
 
     Label
       !text: tr('Boosted')
@@ -144,8 +147,7 @@ Panel
       anchors.bottom: parent.bottom
       anchors.left: parent.left
       anchors.right: parent.right
-      opacity: 0.5
-
+      
     Panel
       anchors.top: parent.top
       anchors.left: parent.left
@@ -155,16 +157,15 @@ Panel
 
       Creature
         id: creature
-        size: 64 64
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
         image-source: ""
         image-border: 0
         border-width: 0
         border-color: alpha
-
+      
       UIWidget
-        id: monsterImage
+        id: creature2
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
         visible: false
@@ -174,6 +175,7 @@ Panel
       anchors.horizontalCenter: prev.horizontalCenter
       anchors.top: prev.bottom
       margin-top: 3
+      opacity: 0.85  
 
     Panel
       anchors.top: parent.top
@@ -184,7 +186,6 @@ Panel
 
       Creature
         id: boss
-        size: 64 64
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
         image-source: ""
@@ -193,7 +194,7 @@ Panel
         border-color: alpha
         
       UIWidget
-        id: bossImage
+        id: boss2
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
         visible: false
@@ -203,3 +204,4 @@ Panel
       anchors.horizontalCenter: prev.horizontalCenter
       anchors.top: prev.bottom
       margin-top: 3
+      opacity: 0.85

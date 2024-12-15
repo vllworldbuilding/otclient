@@ -4,12 +4,12 @@ Particle
   duration: 3.5
   min-position-radius: 0
   max-position-radius: 800
-  velocity: 150
+  velocity: 5
   min-velocity-angle: 30
   max-velocity-angle: 55
   colors: #FFFFFF00 #fa8c0f #05050500
   colors-stops: 0 0.80 1
-  size: 20 20
+  size: 5 5
   texture: /particles/particle2
   composition-mode: normal
 
