@@ -28,3 +28,13 @@ Panel
     effect: background-effect
     anchors.fill: parent
     phantom: true
+
+  UIWidget
+    id: exibeLogo
+    margin-top: 3
+    anchors.top: parent.top
+    anchors.horizontalCenter: parent.horizontalCenter
+    width: 450
+    height: 450
+    image-source: /images/logo.png
+    opacity: 0.9  
