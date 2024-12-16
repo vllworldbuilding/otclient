@@ -20,7 +20,9 @@ logoutWindow = nil
 exitWindow = nil
 bottomSplitter = nil
 limitedZoom = false
-currentViewMode = 0
+currentViewMode = 1
+smartWalkDirs = {}
+smartWalkDir = nil
 leftIncreaseSidePanels = nil
 leftDecreaseSidePanels = nil
 rightIncreaseSidePanels = nil
@@ -249,11 +251,7 @@ function show()
     updateStretchShrink()
     logoutButton:setTooltip(tr('Logout'))
 
-    setupViewMode(0)
-    if g_platform.isMobile() then
-        setupViewMode(1)
-        setupViewMode(2)
-    end
+    setupViewMode(2)
 
     addEvent(function()
         if not limitedZoom or g_game.isGM() then
@@ -267,7 +265,7 @@ function show()
 end
 
 function hide()
-    setupViewMode(0)
+    setupViewMode(1)
 
     disconnect(g_app, {
         onClose = tryExit
@@ -1256,11 +1254,12 @@ function setupViewMode(mode)
         end
     elseif mode == 2 then
         local limit = limitedZoom and not g_game.isGM()
+        gameMapPanel:setKeepAspectRatio(false)
         gameMapPanel:setLimitVisibleRange(limit)
-        gameMapPanel:setZoom(11)
+        gameMapPanel:setZoom(15)
         gameMapPanel:setVisibleDimension({
-            width = 15,
-            height = 11
+            width = 23,
+            height = 13
         })
         gameMapPanel:fill('parent')
         gameRootPanel:fill('parent')
