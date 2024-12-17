@@ -4,7 +4,7 @@ GameSidePanel < UIMiniWindowContainer
   width: 176
   layout:
     type: verticalBox
-    //spacing: 1 
+    spacing: 1
 
 SelectColumnButton < CheckBox
   visible: false
@@ -45,7 +45,7 @@ UIWidget
     anchors.right: gameRightExtraPanel.left
     anchors.top: gameTopPanel.bottom
     anchors.bottom: gameBottomPanel.top
-    
+    visible: true
     focusable: false
 
     Button
@@ -69,8 +69,8 @@ UIWidget
     anchors.top: parent.top
     anchors.bottom: parent.bottom
     focusable: false
-    visible: true
-    on: true
+    visible: false
+    on: false
     $!on:
       width: 0
       visible: false
@@ -83,7 +83,7 @@ UIWidget
     margin-left: 1
     focusable: false
     visible: true
-    on: true
+    on: false
     $!on:
       width: 0
       visible: false
@@ -97,7 +97,7 @@ UIWidget
     height: 200
     focusable: false
     height: 1
-    on: true
+    on: false
 
   GameSidePanel
     id: gameRightPanel
@@ -105,7 +105,7 @@ UIWidget
     anchors.top: gameMainRightPanel.bottom
     anchors.bottom: parent.bottom
     focusable: false
-    on: true
+    on: false
 
   GameSidePanel
     id: gameRightExtraPanel
@@ -114,8 +114,8 @@ UIWidget
     anchors.bottom: parent.bottom
     margin-right: 1
     focusable: false
-    visible: true
-    on: true
+    visible: false
+    on: false
     $!on:
       width: 0
       visible: false
@@ -159,10 +159,10 @@ UIWidget
 
   TopStatsBar
     id: gameTopPanel
-    anchors.left: gameLeftExtraPanel.right
-    anchors.right: gameRightExtraPanel.left
     anchors.top: parent.top
-    focusable: false
+    anchors.left: parent.left
+    anchors.right: parent.right
+    focusable: true
 
   TopStatsBar
     id: gameBottomStatsBarPanel
