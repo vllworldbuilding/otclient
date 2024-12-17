@@ -239,7 +239,7 @@ function UIMiniWindow:onDragLeave(droppedWidget, mousePos)
 
     self:saveParent(self:getParent())
 
-    -- Note: It seems to prevent the minimap, inventory, and health widgets from moving off the interface panel.
+    --[[ Note: It seems to prevent the minimap, inventory, and health widgets from moving off the interface panel.
     if self.moveOnlyToMain or droppedWidget and droppedWidget.onlyPhantomDrop then
         if not (droppedWidget) or (self.moveOnlyToMain and not (droppedWidget.onlyPhantomDrop)) or
             (not (self.moveOnlyToMain) and droppedWidget.onlyPhantomDrop) then
@@ -248,7 +248,7 @@ function UIMiniWindow:onDragLeave(droppedWidget, mousePos)
             self.oldParentDrag:insertChild(self.oldParentDragIndex, self)
             self.movedWidget = nil
         end
-    end
+    end]]
 end
 
 function UIMiniWindow:onDragMove(mousePos, mouseMoved)

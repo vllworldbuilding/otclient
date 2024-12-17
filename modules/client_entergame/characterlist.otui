@@ -1,6 +1,7 @@
 CharacterWidget < UIWidget
   height: 14
   background-color: alpha
+  opacity: 0.85
   &updateOnStates: |
     function(self)
       local children = self:getChildren()
@@ -152,6 +153,7 @@ MainWindow
   id: charactersWindow
   !text: tr('Character List')
   visible: false
+
   @onEnter: CharacterList.doLogin()
   @onEscape: CharacterList.hide(true)
   @onSetup: |

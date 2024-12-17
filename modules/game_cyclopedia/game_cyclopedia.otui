@@ -27,7 +27,8 @@ MainWindow
       margin-left: 1
       size: 668 36
       @onClick: SelectWindow("items")
-
+      visible: false
+// VISIBLE TRUE PARA MOSTRAR BOTAM ITEMS
       $on:
         size: 150 34
         image-clip: 0 0 150 34
@@ -46,7 +47,8 @@ MainWindow
     UIButton
       id: bestiary
       anchors.top: prev.top
-      anchors.left: prev.right
+      anchors.left: parent.left
+// ANCHORS.LEFT: PREV.RIGHT PARA COLOCAR O BOTÃO ALINHADO COM O PRÓXIMO BOTÃO      
       margin-left: 1
       @onClick: SelectWindow("bestiary")
 
@@ -71,6 +73,8 @@ MainWindow
       anchors.left: prev.right
       margin-left: 1
       @onClick: SelectWindow("charms")
+      visible: false
+      //visible true para mostrar o botão
 
       $on:
         size: 150 34
@@ -90,7 +94,8 @@ MainWindow
     UIButton
       id: map
       anchors.top: prev.top
-      anchors.left: prev.right
+      anchors.left: prev.left
+      // anchors.left: 
       margin-left: 1
       @onClick: SelectWindow("map")
 

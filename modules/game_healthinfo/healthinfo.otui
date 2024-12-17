@@ -4,6 +4,7 @@ PhantomMiniWindow
   phantom: false
   &panelHeight: 32
   height: 32
+  visible: false
 
   UIWidget
     id: health

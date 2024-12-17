@@ -4,7 +4,7 @@ GameSidePanel < UIMiniWindowContainer
   width: 176
   layout:
     type: verticalBox
-    //spacing: 1
+    //spacing: 1 
 
 SelectColumnButton < CheckBox
   visible: false
@@ -181,6 +181,7 @@ UIWidget
     image-clip: 27 0 9 27
     size: 9 27
     @onClick: onIncreaseLeftPanels()
+    visible: false
 
     $pressed !disabled:
       image-clip: 36 0 9 27
@@ -196,6 +197,7 @@ UIWidget
     image-clip: 0 0 9 27
     size: 9 27
     @onClick: onDecreaseLeftPanels()
+    visible: false
 
     $pressed !disabled:
       image-clip: 9 0 9 27
@@ -211,6 +213,7 @@ UIWidget
     image-clip: 27 27 9 27
     size: 9 27
     @onClick: onIncreaseRightPanels()
+    visible: false
 
     $pressed !disabled:
       image-clip: 36 27 9 27
@@ -226,6 +229,7 @@ UIWidget
     image-clip: 0 27 9 27
     size: 9 27
     @onClick: onDecreaseRightPanels()
+    visible: false
 
     $pressed !disabled:
       image-clip: 9 27 9 27

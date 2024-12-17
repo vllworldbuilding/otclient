@@ -9,7 +9,7 @@ ShowOffWidget < UIWidget
     margin-top: 28
     margin-left: 10
     image-auto-resize: true
-    opacity: 0.9
+    opacity: 0.85
 
   Label
     id: description
@@ -29,6 +29,7 @@ Panel
   anchors.bottom: parent.bottom
   anchors.horizontalCenter: parent.horizontalCenter
   image-source: /images/ui/panel_top
+  opacity: 0.85
    
   UIWidget
     phantom: true
@@ -42,7 +43,7 @@ Panel
     font: verdana-11px-rounded
     font-scale: 4
     shader: false
-    opacity: 0.9
+    opacity: 0.85
     visible: false  
 
   MiniQtScrollableWindow
@@ -55,15 +56,15 @@ Panel
 
     Label
       id: showOffWindowText
-      !text: tr('The Herald')
+      !text: tr('The Middlegard Herald')
       font: verdana-11px-antialised
-      text-offset: 0 2
+      text-offset: 0 1
       text-align: top
       anchors.top: parent.top
       anchors.bottom: parent.bottom
       anchors.left: parent.left
       anchors.right: parent.right
-      opacity: 0.5
+      opacity: 0.85
 
   MiniQtWindow
     id: eventsWindow
@@ -73,18 +74,18 @@ Panel
     margin-left: 1
     size: 246 116
     draggable: false
-    opacity: 0.6
+    opacity: 0.85
 
     Label
       !text: tr('Event Schedule')
       font: verdana-11px-antialised
-      text-offset: 0 2
+      text-offset: 0 1
       text-align: top
       anchors.top: parent.top
       anchors.bottom: parent.bottom
       anchors.left: parent.left
       anchors.right: parent.right
-      opacity: 0.8
+      opacity: 0.85
 
     UIWidget
       anchors.top: parent.top
@@ -98,6 +99,7 @@ Panel
       image-source: /images/ui/widget_border
       padding: 2
       @onClick: onClickOnCalendar()
+      opacity: 0.85
 
       CalendarTopMark
         !text: tr('Active')
@@ -105,6 +107,7 @@ Panel
         anchors.top: parent.top
         anchors.left: parent.left
         anchors.right: parent.horizontalCenter
+        opacity: 0.85
 
       CalendarDay
         id: activeScheduleEvent
@@ -112,6 +115,7 @@ Panel
         anchors.left: prev.left
         anchors.right: prev.right
         anchors.bottom: parent.bottom
+        opacity: 0.85
 
       CalendarTopMark
         !text: tr('Upcoming')
@@ -119,6 +123,7 @@ Panel
         anchors.right: parent.right
         anchors.left: parent.horizontalCenter
         margin-left: 1  
+        opacity: 0.85        
 
       CalendarDay
         id: upcomingScheduleEvent
@@ -136,12 +141,12 @@ Panel
     margin-left: 1
     size: 169 116
     draggable: false
-    opacity: 0.5
+    opacity: 0.85
 
     Label
       !text: tr('Boosted')
       font: verdana-11px-antialised
-      text-offset: 0 2
+      text-offset: 0 1
       text-align: top
       anchors.top: parent.top
       anchors.bottom: parent.bottom
@@ -174,7 +179,8 @@ Panel
       !text: tr('Creature')
       anchors.horizontalCenter: prev.horizontalCenter
       anchors.top: prev.bottom
-      margin-top: 3
+      margin-top: -2
+      margin-left: 5
       opacity: 0.85  
 
     Panel
@@ -203,5 +209,6 @@ Panel
       !text: tr('Boss')
       anchors.horizontalCenter: prev.horizontalCenter
       anchors.top: prev.bottom
-      margin-top: 3
+      margin-top: -2
+      margin-left: 5
       opacity: 0.85
