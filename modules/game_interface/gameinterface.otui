@@ -4,7 +4,7 @@ GameSidePanel < UIMiniWindowContainer
   width: 176
   layout:
     type: verticalBox
-    spacing: 1
+    //spacing: 1
 
 SelectColumnButton < CheckBox
   visible: false
@@ -51,15 +51,15 @@ UIWidget
     Button
       id: showTopMenuButton
       anchors.top: parent.top
-      anchors.left: parent.left
+      anchors.top: topMenu.bottom
       !text: tr('Show Top Menu')
       height: 32
-      visible: false
+      visible: true
 
   GameBottomPanel
     id: gameBottomPanel
-    anchors.left: gameLeftExtraPanel.right
-    anchors.right: gameRightExtraPanel.left
+    anchors.left: parent.left
+    anchors.right: gameBottomStatsBarPanel.left
     anchors.top: gameBottomStatsBarPanel.bottom
     anchors.bottom: parent.bottom
 
@@ -82,7 +82,7 @@ UIWidget
     anchors.bottom: parent.bottom
     margin-left: 1
     focusable: false
-    visible: true
+    visible: false
     on: false
     $!on:
       width: 0
@@ -160,10 +160,12 @@ UIWidget
   TopStatsBar
     id: gameTopPanel
     anchors.top: parent.top
+    //anchors.top: topMenu.bottom
     anchors.left: parent.left
     anchors.right: parent.right
     focusable: true
-
+    //@onClick: onIncreaseTopStatsBar()    
+  
   TopStatsBar
     id: gameBottomStatsBarPanel
     anchors.left: gameLeftExtraPanel.right
