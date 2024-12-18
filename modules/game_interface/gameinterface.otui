@@ -1,6 +1,5 @@
 GameSidePanel < UIMiniWindowContainer
   image-source: /images/ui/2pixel_up_frame_borderimage
-  image-border: 4
   width: 176
   layout:
     type: verticalBox
@@ -14,11 +13,13 @@ SelectColumnButton < CheckBox
 
 GameBottomPanel < Panel
   image-source: /images/ui/background_dark
+  opacity: 0.85
   image-repeated: true
   padding-top: 6
 
   UIWidget
     image-source: /images/ui/divider_horizontal
+    opacity: 0.85
     anchors.left: parent.left
     anchors.right: parent.right
     anchors.top: parent.top
@@ -56,13 +57,14 @@ UIWidget
       height: 32
       visible: true
 
+
   GameBottomPanel
     id: gameBottomPanel
     anchors.left: parent.left
     anchors.right: gameBottomStatsBarPanel.left
     anchors.top: gameBottomStatsBarPanel.bottom
     anchors.bottom: parent.bottom
-
+//ISSO AQUI EDITA O CHAT /\
   GameSidePanel
     id: gameLeftPanel
     anchors.left: parent.left
@@ -139,15 +141,16 @@ UIWidget
     id: gameSelectLeftExtraColumn
     anchors.right: gameLeftExtraPanel.right
     anchors.bottom: gameLeftExtraPanel.bottom
-
+//ISSO EDITA O SPLITTER \/
   Splitter
     id: bottomSplitter
-    anchors.left: gameLeftExtraPanel.right
-    anchors.right: gameRightExtraPanel.left
+    opacity: 0.85
+    anchors.left: parent.left
+    anchors.right: gameLeftExtraPanel.right
     anchors.bottom: parent.bottom
     relative-margin: bottom
     margin-bottom: 172
-    image-source: /images/ui/divider_horizontal
+    image-source: /images/ui/divider_horizontal_splitter
     height: 5
     @canUpdateMargin: function(self, newMargin) if modules.client_options.getOption('dontStretchShrink') then return self:getMarginBottom() end return math.max(math.min(newMargin, self:getParent():getHeight() - 300), 160) end
     @onGeometryChange: function(self) self:setMarginBottom(math.min(math.max(self:getParent():getHeight() - 300, 160), self:getMarginBottom())) end
@@ -164,8 +167,7 @@ UIWidget
     anchors.left: parent.left
     anchors.right: parent.right
     focusable: true
-    //@onClick: onIncreaseTopStatsBar()    
-  
+
   TopStatsBar
     id: gameBottomStatsBarPanel
     anchors.left: gameLeftExtraPanel.right
