@@ -150,27 +150,28 @@ return {
             g_app.setDrawTexts(value)
         end
     },
-    walkFirstStepDelay                = {
-        value = 250,
-        action = function(value, options, controller, panels, extraWidgets)
-            panels.generalPanel:recursiveGetChildById('walkFirstStepDelay'):setText(string.format(
-                'Walk Delay after first step: %sms', value))
-            g_game.setWalkFirstStepDelay(value)
-        end
-    },
     walkTurnDelay                     = {
         value = 100,
         action = function(value, options, controller, panels, extraWidgets)
             panels.generalPanel:recursiveGetChildById('walkTurnDelay'):setText(string.format(
                 'Walk delay after turn: %sms',
                 value))
-            g_game.setWalkTurnDelay(value)
         end
     },
-    turnDelay                         = {
+    walkTeleportDelay                 = {
         value = 50,
         action = function(value, options, controller, panels, extraWidgets)
-            panels.generalPanel:recursiveGetChildById('turnDelay'):setText(string.format('Turn delay: %sms', value))
+            panels.generalPanel:recursiveGetChildById('walkTeleportDelay'):setText(string.format(
+                'Walk delay after teleport: %sms',
+                value))
+        end
+    },
+    walkStairsDelay                   = {
+        value = 50,
+        action = function(value, options, controller, panels, extraWidgets)
+            panels.generalPanel:recursiveGetChildById('walkStairsDelay'):setText(string.format(
+                'Walk delay after floor change: %sms',
+                value))
         end
     },
     hotkeyDelay                       = {
@@ -399,7 +400,30 @@ return {
     profile                           = {
         value = 1,
     },
-    showExpiryInInvetory           = {
+    rightJoystick                     = {
+        value = false,
+        action = function(value, options, controller, panels, extraWidgets)
+            if not g_platform.isMobile() then return end
+            if value == true then
+                modules.game_shortcuts.getPanel():breakAnchors()
+                modules.game_shortcuts.getPanel():addAnchor(AnchorBottom, "parent", AnchorBottom)
+                modules.game_shortcuts.getPanel():addAnchor(AnchorLeft, "parent", AnchorLeft)
+
+                modules.game_joystick.getPanel():breakAnchors()
+                modules.game_joystick.getPanel():addAnchor(AnchorBottom, "parent", AnchorBottom)
+                modules.game_joystick.getPanel():addAnchor(AnchorRight, "parent", AnchorRight)
+            else
+                modules.game_joystick.getPanel():breakAnchors()
+                modules.game_joystick.getPanel():addAnchor(AnchorBottom, "parent", AnchorBottom)
+                modules.game_joystick.getPanel():addAnchor(AnchorLeft, "parent", AnchorLeft)
+
+                modules.game_shortcuts.getPanel():breakAnchors()
+                modules.game_shortcuts.getPanel():addAnchor(AnchorBottom, "parent", AnchorBottom)
+                modules.game_shortcuts.getPanel():addAnchor(AnchorRight, "parent", AnchorRight)
+            end
+        end
+    },
+    showExpiryInInvetory              = {
         value = true,
         event = nil,
         action = function(value, options, controller, panels, extraWidgets)
@@ -412,7 +436,7 @@ return {
             end, 100)
         end
     },
-    showExpiryInContainers           = {
+    showExpiryInContainers            = {
         value = true,
         event = nil,
         action = function(value, options, controller, panels, extraWidgets)
@@ -444,8 +468,8 @@ return {
             end, 100)
         end
     },
-    autoSwitchPreset                    = false,
-    listKeybindsPanel                   = {
+    autoSwitchPreset                  = false,
+    listKeybindsPanel                 = {
         action = function(value, options, controller, panels, extraWidgets)
             listKeybindsComboBox(value)
         end
