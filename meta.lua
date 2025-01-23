@@ -159,6 +159,10 @@ function g_things.loadStaticData(file) end
 
 ---@param file string
 ---@return boolean
+function g_things.loadSounds(file) end
+
+---@param file string
+---@return boolean
 function g_things.loadDat(file) end
 
 ---@param file string

@@ -8,20 +8,20 @@ Services = {
     --websites = "http://localhost/?subtopic=accountmanagement", --./client_entergame "Forgot password and/or email"
 }
 
-
+--[[
 Servers_init = {
     ["http://127.0.0.1/login.php"] = {
         ["port"] = 80,
-        ["protocol"] = 1340,
+        ["protocol"] = 1320,
         ["httpLogin"] = true
     },
  --[[   ["ip.net"] = {
         ["port"] = 7171,
         ["protocol"] = 860,
         ["httpLogin"] = false
-    },]]
+    },
 }
-
+]]
 
 g_app.setName("OTClient - Redemption");
 g_app.setCompactName("otclient");
