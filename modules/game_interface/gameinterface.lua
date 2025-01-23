@@ -161,11 +161,13 @@ function bindKeys()
         gameMapPanel:zoomOut()
     end, gameRootPanel)
 
-    Keybind.new("Movement", "Stop All Actions", "Esc", "", true)
+    Keybind.new("Movement", "Stop All Actions", "Escape", "", true)
     Keybind.bind("Movement", "Stop All Actions", {
         {
             type = KEY_PRESS,
             callback = function()
+                if lastStopAction + 50 > g_clock.millis() then return end
+                lastStopAction = g_clock.millis()
                 g_game.cancelAttackAndFollow()
             end,
         }
