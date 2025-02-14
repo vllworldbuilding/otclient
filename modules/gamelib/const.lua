@@ -231,6 +231,7 @@ GameColorizedLootValue = 121
 GameAllowPreWalk = 122
 GamePlayerFamiliars = 123
 GameLatencyAdaptiveCamera = 124
+GameMapCache = 125
 
 TextColors = {
     red = '#f55e5e',    -- '#c83200'
