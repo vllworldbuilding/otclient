@@ -19,7 +19,12 @@ local creature_boosted
 local boss_boosted
 
 local default_info = {
-    [1] = {image = "images/randomhint", Title = "The Middlegard Herald", creature1="images/boost_monster1",creature2= "images/boost_monster2",description = "VLL Worldbuilding by Rhamon T. A. Vasconcellos & Victor de Vasconcellos"},
+    {
+    image = "images/randomhint",
+    Title = "The Middlegard Herald",
+    --creature1="images/boost_monster1",creature2= "images/boost_monster2",
+    description = "VLL Worldbuilding by Rhamon T. A. Vasconcellos & Victor de Vasconcellos"
+    },
   --  [2] = {image = "image of label", Title = "title", creature1="images of creature",creature2= "images of boos",description = "text in label see tutorial :  https://github.com/mehah/otclient/wiki"},
 }
 function init()

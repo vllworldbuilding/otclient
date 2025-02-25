@@ -62,7 +62,7 @@ UIWidget
   GameBottomPanel
     id: gameBottomPanel
     anchors.left: parent.left
-    anchors.right: gameBottomStatsBarPanel.left
+    anchors.right: parent.right
     anchors.top: gameBottomStatsBarPanel.bottom
     anchors.bottom: parent.bottom
 //ISSO AQUI EDITA O CHAT /\
