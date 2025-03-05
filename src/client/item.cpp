@@ -178,14 +178,14 @@ void Item::updatePatterns()
                 case Otc::FluidNone:
                     color = Otc::FluidTransparent;
                     break;
-                case Otc::FluidWater:
+                case Otc::FluidSaltWater:
                     color = Otc::FluidBlue;
                     break;
                 case Otc::FluidMana:
                     color = Otc::FluidPurple;
                     break;
                 case Otc::FluidBeer:
-                    color = Otc::FluidBrown;
+                    color = Otc::FluidOrange;
                     break;
                 case Otc::FluidOil:
                     color = Otc::FluidBrown;
@@ -215,19 +215,31 @@ void Item::updatePatterns()
                     color = Otc::FluidYellow;
                     break;
                 case Otc::FluidRum:
-                    color = Otc::FluidBrown;
+                    color = Otc::FluidOrange;
                     break;
-                case Otc::FluidFruidJuice:
+                case Otc::FluidFruitJuice:
                     color = Otc::FluidYellow;
                     break;
                 case Otc::FluidCoconutMilk:
                     color = Otc::FluidWhite;
                     break;
                 case Otc::FluidTea:
-                    color = Otc::FluidBrown;
+                    color = Otc::FluidOrange;
                     break;
                 case Otc::FluidMead:
+                    color = Otc::FluidOrange;
+                    break;
+                case Otc::FluidInk:
+                    color = Otc::FluidBlack;
+                    break;
+                case Otc::FluidCandy:
+                    color = Otc::FluidPink;
+                    break;
+                case Otc::FluidChocolate:
                     color = Otc::FluidBrown;
+                    break;
+                case Otc::FluidFreshWater:
+                    color = Otc::FluidBlue;
                     break;
                 default:
                     color = Otc::FluidTransparent;
