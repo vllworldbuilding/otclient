@@ -187,7 +187,7 @@ namespace Otc
         FluidPurple,
         FluidBlack,
         FluidBrown,
-        FluidPink,
+        FluidPink
     };
 
     enum FluidsType : uint8_t
@@ -213,8 +213,7 @@ namespace Otc
         FluidInk,
         FluidCandy,
         FluidChocolate,
-        FluidFreshWater,
-        FluidWhiteWine
+        FluidFreshWater
     };
 
     enum FightModes : uint8_t
