@@ -235,6 +235,7 @@ end
 function online()
     skillsWindow:setupOnStart() -- load character window configuration
     refresh()
+    onProfessionHeaderClick()
 end
 
 function refresh()
@@ -286,6 +287,36 @@ function refresh()
 
     update()
     updateHeight()
+end
+
+function onProfessionHeaderClick()
+    -- Get the state from top profession skill (fishing - skill 6)
+    local combatButton = skillsWindow:recursiveGetChildById('combatSkillsButton')
+    local professionButton = skillsWindow:recursiveGetChildById('professionSkillsButton')
+
+    local professionSkill = skillsWindow:recursiveGetChildById('skillId6')
+    local showProfessions = not professionSkill:isVisible()
+
+    combatButton:setVisible(showProfessions)    
+    professionButton:setVisible(not showProfessions)
+
+
+    
+    -- Combat skills (0-5)
+    for i = 0, 5 do
+      local skillButton = skillsWindow:recursiveGetChildById('skillId' .. i)
+      if skillButton then
+        skillButton:setVisible(not showProfessions)
+      end
+    end
+    
+    -- Profession skills (6-12)
+    for i = 6, 20 do
+      local skillButton = skillsWindow:recursiveGetChildById('skillId' .. i)
+      if skillButton then
+        skillButton:setVisible(showProfessions)
+      end
+    end
 end
 
 function updateHeight()

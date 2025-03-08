@@ -148,6 +148,46 @@ MiniWindow
       SkillPercentPanel
         background-color: red
 
+    UIButton
+      id: combatSkillsButton
+      height: 20
+      margin-top: 5
+      visible: false
+      background-color: #00000066
+      border: 1 #111111
+      &onClick: onProfessionHeaderClick
+      
+      $pressed:
+        background-color: #00000099
+      
+      Label
+        !text: tr('View Combat Skills')
+        font: verdana-11px-monochrome
+        text-align: center
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.verticalCenter: parent.verticalCenter
+        color: #FFFFFF      
+
+    UIButton
+      id: professionSkillsButton
+      height: 20
+      margin-top: 5
+      visible: true
+      background-color: #00000066
+      border: 1 #111111
+      &onClick: onProfessionHeaderClick
+      
+      $pressed:
+        background-color: #00000099
+      
+      Label
+        !text: tr('View Economic Skills')
+        font: verdana-11px-monochrome
+        text-align: center
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.verticalCenter: parent.verticalCenter
+        color: #FFFFFF      
+
     SkillButton
       id: skillId0
       SkillNameLabel
