@@ -264,7 +264,7 @@ MiniWindow
         !text: tr('Mining')
       SkillValueLabel
       ImageSkill
-        image-source: /images/icons/icon_fishing
+        image-source: /images/icons/icon_pick
         image-size: 9 9
       SkillPercentPanel
 
@@ -274,7 +274,7 @@ MiniWindow
         !text: tr('Smithing')
       SkillValueLabel
       ImageSkill
-        image-source: /images/icons/icon_fishing
+        image-source: /images/icons/icon_smith
         image-size: 9 9
       SkillPercentPanel
 
@@ -284,7 +284,7 @@ MiniWindow
         !text: tr('Enchanting')
       SkillValueLabel
       ImageSkill
-        image-source: /images/icons/icon_fishing
+        image-source: /images/icons/icon_enchant
         image-size: 9 9
       SkillPercentPanel
 
@@ -324,7 +324,7 @@ MiniWindow
         !text: tr('Farming')
       SkillValueLabel
       ImageSkill
-        image-source: /images/icons/icon_fishing
+        image-source: /images/icons/icon_farming
         image-size: 9 9
       SkillPercentPanel
 
