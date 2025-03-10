@@ -94,7 +94,7 @@ function getTypeImagePath(creatureType)
     return path
 end
 
-function getIconImagePath(iconId)
+function getIconImagePath(iconId, category)
     local path
     if iconId == NpcIconChat then
         path = '/images/game/npcicons/icon_chat'
@@ -106,6 +106,24 @@ function getIconImagePath(iconId)
         path = '/images/game/npcicons/icon_tradequest'
     end
     return path
+end
+
+function getIconsImagePath(iconId, category)
+    local path
+    if category == 1 then
+        path = '/images/game/creatureicons/monster/' .. iconId
+    else
+        path = '/images/game/creatureicons/player/' .. iconId
+    end
+
+    return path
+end
+
+function Creature:onIconsChange(icon, category, count)
+    local imagePath = getIconsImagePath(icon,category)
+    if imagePath then
+        self:setIconsTexture(imagePath)
+    end
 end
 
 function Creature:onSkullChange(skullId)
