@@ -541,7 +541,7 @@ UIWidget
       anchors.right: parent.right
       margin-top: 3
       SkillNameLabel
-        !text: tr('Smithing')
+        !text: tr('Mining')
         color: #C0C0C0
       SkillValueLabel
       SkillCharacterIcon
@@ -559,7 +559,7 @@ UIWidget
       anchors.right: parent.right
       margin-top: 3
       SkillNameLabel
-        !text: tr('Enchanting')
+        !text: tr('Metalworking')
         color: #C0C0C0
       SkillValueLabel
       SkillCharacterIcon
@@ -577,7 +577,7 @@ UIWidget
       anchors.right: parent.right
       margin-top: 3
       SkillNameLabel
-        !text: tr('Woodcutting')
+        !text: tr('Hunting')
         color: #C0C0C0
       SkillValueLabel
       SkillCharacterIcon
@@ -595,7 +595,7 @@ UIWidget
       anchors.right: parent.right
       margin-top: 3
       SkillNameLabel
-        !text: tr('Fletching')
+        !text: tr('Farming')
         color: #C0C0C0
       SkillValueLabel
       SkillCharacterIcon
@@ -613,7 +613,7 @@ UIWidget
       anchors.right: parent.right
       margin-top: 3
       SkillNameLabel
-        !text: tr('Hunting')
+        !text: tr('Cooking')
         color: #C0C0C0
       SkillValueLabel
       SkillCharacterIcon
@@ -631,7 +631,7 @@ UIWidget
       anchors.right: parent.right
       margin-top: 3
       SkillNameLabel
-        !text: tr('Farming')
+        !text: tr('Crafting')
         color: #C0C0C0
       SkillValueLabel
       SkillCharacterIcon
@@ -649,7 +649,7 @@ UIWidget
       anchors.right: parent.right
       margin-top: 3
       SkillNameLabel
-        !text: tr('Cooking')
+        !text: tr('Herblore')
         color: #C0C0C0
       SkillValueLabel
       SkillCharacterIcon
@@ -667,7 +667,7 @@ UIWidget
       anchors.right: parent.right
       margin-top: 3
       SkillNameLabel
-        !text: tr('Crafting')
+        !text: tr('Alchemy')
         color: #C0C0C0
       SkillValueLabel
       SkillCharacterIcon
@@ -685,7 +685,7 @@ UIWidget
       anchors.right: parent.right
       margin-top: 3
       SkillNameLabel
-        !text: tr('Herblore')
+        !text: tr('Archaeology')
         color: #C0C0C0
       SkillValueLabel
       SkillCharacterIcon
@@ -703,7 +703,7 @@ UIWidget
       anchors.right: parent.right
       margin-top: 3
       SkillNameLabel
-        !text: tr('Alchemy')
+        !text: tr('Music')
         color: #C0C0C0
       SkillValueLabel
       SkillCharacterIcon
@@ -721,7 +721,7 @@ UIWidget
       anchors.right: parent.right
       margin-top: 3
       SkillNameLabel
-        !text: tr('Archaeology')
+        !text: tr('Lore')
         color: #C0C0C0
       SkillValueLabel
       SkillCharacterIcon
@@ -739,7 +739,7 @@ UIWidget
       anchors.right: parent.right
       margin-top: 3
       SkillNameLabel
-        !text: tr('Music')
+        !text: tr('Inscription')
         color: #C0C0C0
       SkillValueLabel
       SkillCharacterIcon
@@ -757,7 +757,7 @@ UIWidget
       anchors.right: parent.right
       margin-top: 3
       SkillNameLabel
-        !text: tr('Wisdom')
+        !text: tr('Languages')
         color: #C0C0C0
       SkillValueLabel
       SkillCharacterIcon
@@ -767,7 +767,7 @@ UIWidget
         anchors.left: icon.right
         margin-top: 15
         margin-left: 5
-        background-color: #00C000                                                                                                        
+        background-color: #00C000                                                                                                          
     Label
       !text: tr('Account Badges')
       margin-top: 12

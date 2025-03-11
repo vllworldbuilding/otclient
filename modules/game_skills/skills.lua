@@ -311,7 +311,7 @@ function onProfessionHeaderClick()
     end
     
     -- Profession skills (6-12)
-    for i = 6, 20 do
+    for i = 6, 16 do
       local skillButton = skillsWindow:recursiveGetChildById('skillId' .. i)
       if skillButton then
         skillButton:setVisible(showProfessions)

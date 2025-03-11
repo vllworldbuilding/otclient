@@ -2239,7 +2239,7 @@ void ProtocolGame::parsePlayerSkills(const InputMessagePtr& msg) const
         m_localPlayer->setBaseMagicLevel(baseMagicLevel);
     }
 
-    for (int_fast32_t skill = Otc::Fist; skill <= Otc::Wisdom; ++skill) {
+    for (int_fast32_t skill = Otc::Fist; skill <= Otc::Languages; ++skill) {
         const uint16_t level = g_game.getFeature(Otc::GameDoubleSkills) ? msg->getU16() : msg->getU8();
 
         uint16_t baseLevel;
@@ -4284,7 +4284,7 @@ void ProtocolGame::parseCyclopediaCharacterInfo(const InputMessagePtr& msg)
 
             std::vector<std::vector<uint16_t>> skills;
 
-            for (int_fast32_t skill = Otc::Fist; skill <= Otc::Wisdom; ++skill) {
+            for (int_fast32_t skill = Otc::Fist; skill <= Otc::Languages; ++skill) {
                 msg->getU8(); // Hardcoded Skill Ids
                 const uint16_t skillLevel = msg->getU16();
                 const uint16_t baseSkill = msg->getU16();

@@ -83,6 +83,62 @@ MiniWindow
       RedPercentPanel
 
     SkillButton
+      id: magiclevel
+      SkillNameLabel
+        !text: tr('Magic Level')
+      SkillValueLabel
+      ImageSkill
+        image-source: /images/icons/icon_magic
+        image-size: 9 9
+      SkillPercentPanel
+        background-color: red
+
+    SkillButton
+      id: skillId17
+      SkillNameLabel
+        !text: tr('Music')
+      SkillValueLabel
+      ImageSkill
+        image-source: /images/icons/icon_music
+        image-size: 9 9
+      SkillPercentPanel
+
+    SkillButton
+      id: skillId18
+      SkillNameLabel
+        !text: tr('Lore')
+      SkillValueLabel
+      ImageSkill
+        image-source: /images/icons/icon_lore
+        image-size: 9 9
+      SkillPercentPanel
+
+    SkillButton
+      id: skillId20
+      SkillNameLabel
+        !text: tr('Languages')
+      SkillValueLabel
+      ImageSkill
+        image-source: /images/icons/icon_languages
+        image-size: 9 9
+      SkillPercentPanel
+
+    SkillButton
+      id: skillId19
+      SkillNameLabel
+        !text: tr('Inscription')
+      SkillValueLabel
+      ImageSkill
+        image-source: /images/icons/icon_inscription
+        image-size: 9 9
+      SkillPercentPanel
+ 
+    HorizontalSeparator
+      margin-top: 5
+      margin-bottom: 5
+
+    SkillButton
+      visible: false
       id: health
       height: 15
       SkillNameLabel
@@ -90,6 +146,7 @@ MiniWindow
       SkillValueLabel
 
     SkillButton
+      visible: false    
       id: mana
       height: 15
       SkillNameLabel
@@ -136,17 +193,10 @@ MiniWindow
         !text: tr('Offline Training')
       SkillValueLabel
       RedPercentPanel
-
-    SkillButton
-      id: magiclevel
-      SkillNameLabel
-        !text: tr('Magic Level')
-      SkillValueLabel
-      ImageSkill
-        image-source: /images/icons/icon_magic
-        image-size: 9 9
-      SkillPercentPanel
-        background-color: red
+      
+    HorizontalSeparator
+      margin-top: 5
+      margin-bottom: 5
 
     UIButton
       id: combatSkillsButton
@@ -264,62 +314,42 @@ MiniWindow
         !text: tr('Mining')
       SkillValueLabel
       ImageSkill
-        image-source: /images/icons/icon_pick
+        image-source: /images/icons/icon_mining
         image-size: 9 9
       SkillPercentPanel
 
     SkillButton
       id: skillId8
       SkillNameLabel
-        !text: tr('Smithing')
+        !text: tr('Metalworking')
       SkillValueLabel
       ImageSkill
-        image-source: /images/icons/icon_smith
+        image-source: /images/icons/icon_metalworking
         image-size: 9 9
       SkillPercentPanel
 
     SkillButton
       id: skillId9
       SkillNameLabel
-        !text: tr('Enchanting')
+        !text: tr('Woodworking')
       SkillValueLabel
       ImageSkill
-        image-source: /images/icons/icon_enchant
+        image-source: /images/icons/icon_woodworking
         image-size: 9 9
       SkillPercentPanel
 
     SkillButton
       id: skillId10
       SkillNameLabel
-        !text: tr('Woodcutting')
+        !text: tr('Hunting')
       SkillValueLabel
       ImageSkill
-        image-source: /images/icons/icon_fishing
+        image-source: /images/icons/icon_hunting
         image-size: 9 9
       SkillPercentPanel
 
     SkillButton
       id: skillId11
-      SkillNameLabel
-        !text: tr('Fletching')
-      SkillValueLabel
-      ImageSkill
-        image-source: /images/icons/icon_fishing
-        image-size: 9 9
-      SkillPercentPanel
-
-    SkillButton
-      id: skillId12
-      SkillNameLabel
-        !text: tr('Hunting')
-      SkillValueLabel
-      ImageSkill
-        image-source: /images/icons/icon_fishing
-        image-size: 9 9
-      SkillPercentPanel
-
-    SkillButton
-      id: skillId13
       SkillNameLabel
         !text: tr('Farming')
       SkillValueLabel
@@ -329,75 +359,55 @@ MiniWindow
       SkillPercentPanel
 
     SkillButton
-      id: skillId14
+      id: skillId12
       SkillNameLabel
         !text: tr('Cooking')
       SkillValueLabel
       ImageSkill
-        image-source: /images/icons/icon_fishing
+        image-source: /images/icons/icon_cooking
+        image-size: 9 9
+      SkillPercentPanel
+
+    SkillButton
+      id: skillId13
+      SkillNameLabel
+        !text: tr('Crafting')
+      SkillValueLabel
+      ImageSkill
+        image-source: /images/icons/icon_crafting
+        image-size: 9 9
+      SkillPercentPanel
+
+    SkillButton
+      id: skillId14
+      SkillNameLabel
+        !text: tr('Herblore')
+      SkillValueLabel
+      ImageSkill
+        image-source: /images/icons/icon_herblore
         image-size: 9 9
       SkillPercentPanel
 
     SkillButton
       id: skillId15
       SkillNameLabel
-        !text: tr('Crafting')
+        !text: tr('Alchemy')
       SkillValueLabel
       ImageSkill
-        image-source: /images/icons/icon_fishing
+        image-source: /images/icons/icon_alchemy
         image-size: 9 9
       SkillPercentPanel
 
     SkillButton
       id: skillId16
       SkillNameLabel
-        !text: tr('Herblore')
-      SkillValueLabel
-      ImageSkill
-        image-source: /images/icons/icon_fishing
-        image-size: 9 9
-      SkillPercentPanel
-
-    SkillButton
-      id: skillId17
-      SkillNameLabel
-        !text: tr('Alchemy')
-      SkillValueLabel
-      ImageSkill
-        image-source: /images/icons/icon_fishing
-        image-size: 9 9
-      SkillPercentPanel
-
-    SkillButton
-      id: skillId18
-      SkillNameLabel
         !text: tr('Archaeology')
       SkillValueLabel
       ImageSkill
-        image-source: /images/icons/icon_fishing
+        image-source: /images/icons/icon_archaeology
         image-size: 9 9
       SkillPercentPanel
-
-    SkillButton
-      id: skillId19
-      SkillNameLabel
-        !text: tr('Music')
-      SkillValueLabel
-      ImageSkill
-        image-source: /images/icons/icon_fishing
-        image-size: 9 9
-      SkillPercentPanel
-
-    SkillButton
-      id: skillId20
-      SkillNameLabel
-        !text: tr('Wisdom')
-      SkillValueLabel
-      ImageSkill
-        image-source: /images/icons/icon_fishing
-        image-size: 9 9
-      SkillPercentPanel
-        
+      
     HorizontalSeparator
       margin-top: 5
       margin-bottom: 5
