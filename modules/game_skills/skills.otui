@@ -80,7 +80,10 @@ MiniWindow
       SkillNameLabel
         !text: tr('Level')
       SkillValueLabel
-      RedPercentPanel
+      ImageSkill
+        image-source: /images/icons/icon_exp
+        image-size: 9 9
+      SkillPercentPanel
 
     SkillButton
       id: magiclevel
