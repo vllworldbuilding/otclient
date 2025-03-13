@@ -1,5 +1,4 @@
 ChannelListLabel < Label
-  font: verdana-11px-monochrome
   background-color: alpha
   text-offset: 2 0
   focusable: true
@@ -25,7 +24,7 @@ MainWindow
 
   Label
     id: openPrivateChannelWithLabel
-    !text: tr('Open a private message channel') .. ':'
+    !text: tr('Open a private message channel:')
     anchors.left: parent.left
     anchors.right: parent.right
     anchors.bottom: next.top

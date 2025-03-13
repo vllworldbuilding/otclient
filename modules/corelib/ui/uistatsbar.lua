@@ -1,4 +1,4 @@
--- @docclass
+--XXXXX @docclass
 UIStatsBar = extends(UIWidget, 'UIStatsBar')
 
 function UIStatsBar.create()
@@ -34,7 +34,7 @@ function UIStatsBar:reloadBorder()
 
     self.grade:show()
 
-    -- Borders
+    -- XXXXX Borders
     for _, child in ipairs(self.grade:getChildren()) do
         if string.len(child:getId()) >= 13  and string.sub(child:getId(), 1, 13) == 'grade_border_' then
             child:show()

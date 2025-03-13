@@ -1,0 +1,386 @@
+ConsoleLabel < UITextEdit
+  font: verdana-11px-antialised
+  height: 17
+  color: yellow
+  margin-left: 15
+  selection-color: gray
+  selection-background-color: #FFF7E745
+  text-wrap: true
+  text-auto-resize: true
+  change-cursor-image: false
+  cursor-visible: false
+  editable: false
+  draggable: true
+  selectable: false
+  focusable: false
+
+ConsolePhantomLabel < UIWidget
+  font: verdana-11px-antialised
+  height: 14
+  text-wrap: true
+  text-auto-resize: true
+
+ConsoleTabBar < MoveableTabBar
+  height: 28
+
+ConsoleTabBarPanel < MoveableTabBarPanel
+  id: consoleTab
+
+  ScrollablePanel
+    id: consoleBuffer
+    anchors.fill: parent
+    margin-right: 20
+    margin-bottom: 10
+    margin-left: 5
+    vertical-scrollbar: consoleScrollBar
+    layout:
+      type: verticalBox
+      align-bottom: true
+    inverted-scroll: true
+    padding: 1
+
+  VerticalScrollBar
+    id: consoleScrollBar
+    anchors.top: parent.top
+    anchors.bottom: parent.bottom
+    anchors.right: parent.right
+    margin-top: 5
+    margin-bottom: 5
+    visible: false
+    step: 14
+    pixels-scroll: true
+
+ConsoleTabBarButton < MoveableTabBarButton
+  size: 20 21
+  font: verdana-11px-antialised
+  image-source: /images/game/console/chat/channelButtons
+  image-clip: 0 0 200 21
+  image-border: 3
+  color: #aaaaaa
+  opacity: 0.6
+  font: lucida
+
+  $hover !checked:
+    opacity: 0.9
+    image-clip: 0 0 200 21
+    color: #D8E7F0
+
+  $disabled:
+    icon-color: #888888
+
+  $checked:
+    image-clip: 0 21 200 21
+    opacity: 1.0
+    color: white
+
+
+UIWindow
+  id: chat
+  focusable: false
+  phantom: false
+  anchors.top: parent.top
+  anchors.left: parent.left
+  margin-left: 3
+  margin-top: 5
+  size: 520 252
+
+  ResizeBorder
+    id: rB
+    anchors.right: parent.right
+    anchors.top: parent.top
+    anchors.bottom: parent.bottom
+    enabled: true
+    background-color: orange
+    minimum: 520
+
+  ResizeBorder
+    id: rB2
+    anchors.top: parent.top
+    anchors.left: parent.left
+    anchors.right: parent.right
+    background-color: orange
+    minimum: 155
+    enabled: true
+
+  UIWindow
+    id: background
+    focusable: false
+    size: 420 255
+    image-border: 10
+    //image-source: /images/ui/background2
+    anchors.fill: parent
+    phantom: true
+    visible: false
+
+  Panel
+    id: textLineWindow
+    focusable: false
+    image-source: /images/ui/miniBackground
+    image-border: 50
+    size: 420 255
+    anchors.verticalCenter: parent.verticalCenter
+    anchors.left: parent.left
+    margin-left: 5
+    opacity: 0.8
+    phantom: true
+    visible: false
+
+  UIWidget
+    id: lockButton
+    anchors.left: parent.left
+    anchors.top: parent.top
+    margin-left: 6
+    margin-top: 6
+    focusable: false
+    tooltip: Lock chat
+    visible: false
+    cursor: pointer
+    @onClick: saveAndClickLockButton()
+
+  UIButton
+    id: prevChannelButton
+    icon: /images/game/console/leftarrow
+    anchors.left: prev.right
+    anchors.top: parent.top
+    size: 30 23
+    margin-left: 2
+    margin-top: 6
+    opacity: 0.7
+    image-source: /images/game/console/chat/channelButtons
+    image-clip: 0 0 200 21
+    image-border: 10
+    icon-color: white
+    visible: false
+    $hover:
+      opacity: 1
+      icon-color: #FFB829
+
+  ConsoleTabBar
+    id: consoleTabBar
+    anchors.left: prev.right
+    anchors.top: parent.top
+    anchors.right: next.left
+    margin-left: 3
+    margin-top: 8
+    margin-right: 3
+    moveable: true
+    phantom: true
+    visible: false
+    tab-spacing: 1
+
+  CheckBox
+    id: hidesubchat
+    anchors.right: next.left
+    anchors.top: parent.top
+    margin-right: 2
+    margin-top: 10
+    tooltip: Desative as mensagens quando o chat estiver escondido.
+    visible: false
+
+  UIButton
+    id: nextChannelButton
+    icon: /images/game/console/rightarrow
+    color: #aaaaaa
+    anchors.right: next.left
+    anchors.top: parent.top
+    size: 30 23
+    margin-right: 2
+    margin-top: 6
+    opacity: 0.7
+    image-source: /images/game/console/chat/channelButtons
+    image-clip: 0 0 200 21
+    image-border: 10
+    icon-color: white
+    visible: false
+    $hover:
+      opacity: 1
+      icon-color: #FFB829
+    
+  UIButton
+    id: closeChannelButton
+    icon: /images/game/console/closechannel
+    anchors.right: next.left
+    size: 30 23
+    anchors.top: parent.top
+    enabled: false
+    margin-right: 3
+    margin-top: 6
+    opacity: 0.7
+    image-source: /images/game/console/chat/channelButtons
+    image-clip: 0 0 200 21
+    image-border: 10
+    icon-color: white
+    visible: false
+    !tooltip: tr('Close this channel')
+    $hover:
+      opacity: 1
+      icon-color: #FFB829
+    @onClick: removeCurrentTab()
+
+  UIButton
+    id: clearChannelButton
+    icon: /images/game/console/clearchannel
+    anchors.right: next.left
+    anchors.top: parent.top
+    margin-right: 2
+    size: 30 23
+    margin-top: 6
+    opacity: 0.7
+    image-source: /images/game/console/chat/channelButtons
+    image-clip: 0 0 200 21
+    image-border: 10
+    icon-color: white
+    visible: false
+    !tooltip: tr('Clear current message window')
+    $hover:
+      opacity: 1
+      icon-color: #FFB829
+    @onClick: |
+      local consoleTabBar = self:getParent():getChildById('consoleTabBar')
+      clearChannel(consoleTabBar)
+
+  UIButton
+    id: channelsButton
+    icon: /images/game/console/channels
+    anchors.right: next.left
+    anchors.top: parent.top
+    margin-right: 2
+    size: 30 23
+    margin-top: 6
+    opacity: 0.7
+    image-source: /images/game/console/chat/channelButtons
+    image-clip: 0 0 200 21
+    image-border: 10
+    icon-color: white
+    visible: false
+    !tooltip: tr('Open new channel".." (Ctrl+O)"')
+    $hover:
+      opacity: 1
+      icon-color: #FFB829
+    @onClick: g_game.requestChannels()
+
+  UIButton
+    id: ignoreButton
+    icon: /images/game/console/ignore
+    anchors.right: next.left
+    anchors.top: parent.top
+    margin-right: 2
+    size: 30 23
+    margin-top: 6
+    opacity: 0.7
+    image-source: /images/game/console/chat/channelButtons
+    image-clip: 0 0 200 21
+    image-border: 10
+    icon-color: white
+    visible: false
+    tooltip: Ignore players
+    $hover:
+      opacity: 1
+      icon-color: #FFB829
+    @onClick: onClickIgnoreButton()
+
+  UIButton
+    id: hideChatButton
+    anchors.right: parent.right
+    anchors.top: parent.top
+    icon: /images/game/console/hide
+    size: 30 23
+    margin-right: 7
+    margin-top: 6
+    opacity: 0.7
+    image-source: /images/game/console/chat/channelButtons
+    image-clip: 0 0 200 21
+    image-border: 10
+    icon-color: white
+    visible: false
+    $hover:
+      opacity: 1
+      icon-color: #FFB829
+    @onClick: toggleChat()
+
+  Panel
+    id: contentPanel
+    anchors.top: prev.bottom
+    anchors.left: parent.left
+    anchors.right: parent.right
+    anchors.bottom: consoleTextEdit.top
+    margin-left: 6
+    margin-right: 6
+    margin-bottom: 4
+    margin-top: 4
+    padding: 1
+    focusable: false
+
+  UIWidget
+    id: enterBackground
+    focusable: true
+    phantom: true
+    visible: true
+    image-source: /images/game/console/chat/enterBackground
+    image-border: 4
+    size: 515 23
+    anchors.bottom: parent.bottom
+    anchors.right: parent.right
+    margin-bottom: 9
+    margin-right: 9
+    visible: false
+
+  UITextEdit
+    id: consoleTextEdit
+    size: 86 21
+    padding: 3
+    anchors.left: parent.left
+    anchors.right: parent.right
+    anchors.bottom: parent.bottom
+    margin-right: 9
+    margin-left: 29
+    margin-bottom: 11
+    max-length: 255
+    font: verdana-11px-antialised
+    glyph-size: 22 21
+    space-width: 3
+    selection-color: gray
+    selection-background-color: #FFF7E745
+    visible: false
+
+  UIButton
+    id: hideChatButton2
+    anchors.left: parent.left
+    anchors.bottom: parent.bottom
+    icon: /images/game/console/hide
+    size: 30 23
+    margin-right: 7
+    margin-top: 6
+    opacity: 0.7
+    image-source: /images/game/console/chat/channelButtons
+    image-clip: 0 0 200 21
+    image-border: 10
+    icon-color: white
+    tooltip: Minimize chat
+    $hover:
+      opacity: 1
+      icon-color: #FFB829
+    @onClick: toggleChat()
+
+  Button
+    id: sayModeButton
+    icon: /images/game/console/say
+    !tooltip: tr('Ajuste volume')
+    &sayMode: 2
+    size: 22 22
+    anchors.left: parent.left
+    anchors.bottom: parent.bottom
+    margin-left: 6
+    margin-bottom: 8
+    @onClick: sayModeChange()
+    visible: false
+
+  CheckBox
+    id: toggleChat
+    !tooltip: tr('Disable chat mode, allow to walk using ASDW')
+    anchors.right: parent.right
+    anchors.bottom: parent.bottom
+    margin-right: 5
+    margin-bottom: 50
+    visible: false
+    @onCheckChange: toggleChat()

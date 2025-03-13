@@ -38,9 +38,10 @@ TopMenuPanel
   anchors.top: parent.top
   anchors.left: parent.left
   anchors.right: parent.right
-  height: 34
+  height: 24
   image-source: /images/ui/top_bar_login
   opacity: 0.85
+  //XXXXX ISSO AQUI EDITA O TOPMENU NA ENTRADA DO JOGO
 
   TopMenuButtonsPanel
     id: topLeftTogglesPanel

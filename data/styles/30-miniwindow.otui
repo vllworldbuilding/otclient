@@ -26,7 +26,7 @@ MiniWindow < UIMiniWindow
     margin-top: 3
     size: 258 18
     phantom: true
-
+//xxxxx
   UIButton
     id: closeButton
     anchors.top: parent.top

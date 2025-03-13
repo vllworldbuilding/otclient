@@ -1,0 +1,9 @@
+Module
+  name: game_console
+  description: Chat
+  author: Luiz
+  website: https://www.ghostscripts.com.br/
+  sandboxed: true
+  scripts: [ chat ]
+  @onLoad: init()
+  @onUnload: terminate()

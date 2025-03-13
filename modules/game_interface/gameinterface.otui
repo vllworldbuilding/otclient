@@ -13,6 +13,7 @@ SelectColumnButton < CheckBox
     opacity: 1
 
 GameBottomPanel < Panel
+  visible: false
   image-source: /images/ui/background_dark
   opacity: 0.85
   image-repeated: true
@@ -56,7 +57,7 @@ UIWidget
       anchors.top: topMenu.bottom
       !text: tr('Show Top Menu')
       height: 32
-      visible: true
+      visible: false
 
 
   GameBottomPanel
@@ -144,6 +145,7 @@ UIWidget
     anchors.bottom: gameLeftExtraPanel.bottom
 //ISSO EDITA O SPLITTER \/
   Splitter
+    visible: false
     id: bottomSplitter
     opacity: 0.85
     anchors.left: parent.left
@@ -163,8 +165,8 @@ UIWidget
 
   TopStatsBar
     id: gameTopPanel
-    anchors.top: parent.top
-    //anchors.top: topMenu.bottom
+    anchors.top: topMenu.bottom
+    //ISSO AQUI EDITA A BARRA DE LIFE E MANA.
     anchors.left: parent.left
     anchors.right: parent.right
     focusable: true
