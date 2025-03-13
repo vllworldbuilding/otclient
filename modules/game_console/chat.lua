@@ -1,23 +1,86 @@
 SpeakTypesSettings = {
   none = {},
-  say = { speakType = MessageModes.Say, color = '#FFFFFA' },
-  whisper = { speakType = MessageModes.Whisper, color = '#FFFFFA' },
-  yell = { speakType = MessageModes.Yell, color = '#FFFFFA' },
-  broadcast = { speakType = MessageModes.GamemasterBroadcast, color = '#b45626' },
-  private = { speakType = MessageModes.PrivateTo, color = '#49DDC6', private = true },
-  privateRed = { speakType = MessageModes.GamemasterTo, color = '#b45626', private = true },
-  privatePlayerToPlayer = { speakType = MessageModes.PrivateTo, color = '#9F9DFD', private = true },
-  privatePlayerToNpc = { speakType = MessageModes.NpcTo, color = '#9F9DFD', private = true, npcChat = true },
-  privateNpcToPlayer = { speakType = MessageModes.NpcFrom, color = '#49DDC6', private = true, npcChat = true },
-  channelYellow = { speakType = MessageModes.Channel, color = '#FFFFFA' },
-  channelWhite = { speakType = MessageModes.ChannelManagement, color = '#FFFFFF' },
-  channelRed = { speakType = MessageModes.GamemasterChannel, color = '#b45626' },
-  channelOrange = { speakType = MessageModes.ChannelHighlight, color = '#F6A731' },
-  monsterSay = { speakType = MessageModes.MonsterSay, color = '#FE6500', hideInConsole = true},
-  monsterYell = { speakType = MessageModes.MonsterYell, color = '#FE6500', hideInConsole = true},
-  rvrAnswerFrom = { speakType = MessageModes.RVRAnswer, color = '#FE6500' },
-  rvrAnswerTo = { speakType = MessageModes.RVRAnswer, color = '#FE6500' },
-  rvrContinue = { speakType = MessageModes.RVRContinue, color = '#FFFFFA' },
+  say = {
+      speakType = MessageModes.Say,
+      color = '#FFFF00'
+  },
+  whisper = {
+      speakType = MessageModes.Whisper,
+      color = '#FFFF00'
+  },
+  yell = {
+      speakType = MessageModes.Yell,
+      color = '#FFFF00'
+  },
+  broadcast = {
+      speakType = MessageModes.GamemasterBroadcast,
+      color = '#F55E5E'
+  },
+  private = {
+      speakType = MessageModes.PrivateTo,
+      color = '#5FF7F7',
+      private = true
+  },
+  privateRed = {
+      speakType = MessageModes.GamemasterTo,
+      color = '#F55E5E',
+      private = true
+  },
+  privatePlayerToPlayer = {
+      speakType = MessageModes.PrivateTo,
+      color = '#9F9DFD',
+      private = true
+  },
+  privatePlayerToNpc = {
+      speakType = MessageModes.NpcTo,
+      color = '#9F9DFD',
+      private = true,
+      npcChat = true
+  },
+  privateNpcToPlayer = {
+      speakType = MessageModes.NpcFrom,
+      color = '#5FF7F7',
+      private = true,
+      npcChat = true
+  },
+  channelYellow = {
+      speakType = MessageModes.Channel,
+      color = '#FFFF00'
+  },
+  channelWhite = {
+      speakType = MessageModes.ChannelManagement,
+      color = '#FFFFFF'
+  },
+  channelRed = {
+      speakType = MessageModes.GamemasterChannel,
+      color = '#F55E5E'
+  },
+  channelOrange = {
+      speakType = MessageModes.ChannelHighlight,
+      color = '#F6A731'
+  },
+  monsterSay = {
+      speakType = MessageModes.MonsterSay,
+      color = '#FF9A57',
+      hideInConsole = true
+  },
+  monsterYell = {
+      speakType = MessageModes.MonsterYell,
+      color = '#FF9A57',
+      hideInConsole = true
+  },
+  rvrAnswerFrom = {
+      speakType = MessageModes.RVRAnswer,
+      color = '#FE6500'
+  },
+  rvrAnswerTo = {
+      speakType = MessageModes.RVRAnswer,
+      color = '#FE6500'
+  },
+  rvrContinue = {
+      speakType = MessageModes.RVRContinue,
+      color = '#FFFF00'
+  }
 }
 
 SpeakTypes = {
@@ -25,6 +88,7 @@ SpeakTypes = {
   [MessageModes.Whisper] = SpeakTypesSettings.whisper,
   [MessageModes.Yell] = SpeakTypesSettings.yell,
   [MessageModes.GamemasterBroadcast] = SpeakTypesSettings.broadcast,
+  [MessageModes.PrivateTo] = SpeakTypesSettings.private,
   [MessageModes.PrivateFrom] = SpeakTypesSettings.private,
   [MessageModes.GamemasterPrivateFrom] = SpeakTypesSettings.privateRed,
   [MessageModes.NpcTo] = SpeakTypesSettings.privatePlayerToNpc,
@@ -44,12 +108,22 @@ SpeakTypes = {
   [MessageModes.Spell] = SpeakTypesSettings.none,
   [MessageModes.BarkLow] = SpeakTypesSettings.none,
   [MessageModes.BarkLoud] = SpeakTypesSettings.none,
+  [MessageModes.Potion] = SpeakTypesSettings.none
 }
 
 SayModes = {
-  [1] = { speakTypeDesc = 'whisper', icon = '/images/game/console/whisper' },
-  [2] = { speakTypeDesc = 'say', icon = '/images/game/console/say' },
-  [3] = { speakTypeDesc = 'yell', icon = '/images/game/console/yell' }
+    [1] = {
+        speakTypeDesc = 'whisper',
+        image = '/images/ui/console_whisper'
+    },
+    [2] = {
+        speakTypeDesc = 'say',
+        image = '/images/ui/console_say'
+    },
+    [3] = {
+        speakTypeDesc = 'yell',
+        image = '/images/ui/console_yell'
+    }
 }
 
 ChannelEventFormats = {
@@ -198,8 +272,9 @@ function init()
 
   consoleToggleChat = consolePanel:getChildById('toggleChat')
   -- apply buttom functions after loaded
-  consoleTabBar:setNavigation(consolePanel:getChildById('prevChannelButton'), consolePanel:getChildById('nextChannelButton'))
-  consoleTabBar.onTabChange = onTabChange
+    consoleTabBar:setNavigation(consolePanel:getChildById('prevChannelButton'),
+        consolePanel:getChildById('nextChannelButton'))
+    consoleTabBar.onTabChange = onTabChange
   load()
 
 
@@ -705,218 +780,223 @@ end
 
 local isPointerActive = false
 
-function addTabText(text, speaktype, tab, creatureName, color)
-  if not tab or tab.locked or not text or #text == 0 then
-    return
+local function changeNewNessageColor(tab)
+  if tab.newMessageEvent ~= nil or tab.isOnRedMessage then
+      return
   end
 
-  local timestamp = " "
+  tab:setColor('#dfdfdfff')
+  tab.newMessageEvent = scheduleEvent(function()
+      tab:setColor('#f75f5fff')
+      tab.isOnRedMessage = true
+      tab.newMessageEvent = nil
+  end, 1000)
+end
+
+function addTabText(text, speaktype, tab, creatureName)
+  if not tab or tab.locked or not text or #text == 0 then
+      return
+  end
+
   if modules.client_options.getOption('showTimestampsInConsole') then
-    timestamp = os.date('%H:%M') .. ' '
+      text = os.date('%H:%M') .. ' ' .. text
   end
 
   local panel = consoleTabBar:getTabPanel(tab)
   local consoleBuffer = panel:getChildById('consoleBuffer')
-  consoleTabBar:blinkTab(tab)
-
   local label = g_ui.createWidget('ConsoleLabel', consoleBuffer)
   label:setId('consoleLabel' .. consoleBuffer:getChildCount())
 
-  local textFormated
-  if color then
-    textFormated = string.format("{%s, %s} {%s, %s}", timestamp, "gray", text, color)
+  if speaktype.colored then
+      label:setColoredText(text)
   else
-    textFormated = string.format("{%s, %s} {%s, %s}", timestamp, "gray", text, speaktype.color)
+      label:setText(text)
   end
-  label:setColoredText(textFormated)
-
-  local consoleScrollBar = panel:getChildById('consoleScrollBar')
-  if not isActive() then
-    consoleScrollBar:setVisible(false)
+  
+  label:setColor(speaktype.color)
+  -- consoleTabBar:blinkTab(tab)
+  if consoleTabBar:getCurrentTab() ~= tab then
+      changeNewNessageColor(tab)
   end
 
   label.highlightInfo = {}
 
-  if speaktype.npcChat and (g_game.getCharacterName() ~= creatureName or g_game.getCharacterName() == 'Account Manager') then
-    local highlightData = getHighlightedText(text)
-    if #highlightData > 0 then
-      local teste = getNewHighlightedText(text, speaktype.color, "yellow")
-      local labelHighlight = g_ui.createWidget('ConsolePhantomLabel', label)
-      labelHighlight:fill('parent')
-      labelHighlight:setId('consoleLabelHighlight' .. consoleBuffer:getChildCount())
-      labelHighlight.onHoverChange = function(self, hovered)
-        if not hovered and isPointerActive then
-          g_mouse.popCursor()
-          isPointerActive = false
-        end
+  -- Overlay for consoleBuffer which shows highlighted words only
+
+  if speaktype.npcChat and
+      (g_game.getCharacterName() ~= creatureName or g_game.getCharacterName() == 'Account Manager') then
+      local highlightData = getHighlightedText(text)
+      if #highlightData > 0 then
+          local labelHighlight = g_ui.createWidget('ConsolePhantomLabel', label)
+          labelHighlight:fill('parent')
+
+          labelHighlight:setId('consoleLabelHighlight' .. consoleBuffer:getChildCount())
+          labelHighlight:setColor('#1f9ffe')
+
+          -- Remove the curly braces
+          for i = 1, #highlightData / 3 do
+              local dataBlock = {
+                  _start = highlightData[(i - 1) * 3 + 1],
+                  _end = highlightData[(i - 1) * 3 + 2],
+                  words = highlightData[(i - 1) * 3 + 3]
+              }
+              text = text:gsub('%{(.-)%}', dataBlock.words, 1)
+
+              -- Recalculate positions as braces are removed
+              highlightData[(i - 1) * 3 + 1] = dataBlock._start - ((i - 1) * 2)
+              highlightData[(i - 1) * 3 + 2] = dataBlock._end - (1 + (i - 1) * 2)
+          end
+          label:setText(text)
+
+          -- Calculate the positions of the highlighted text and fill with string.char(127) [Width: 1]
+          local drawText = label:getDrawText()
+          local tmpText = ''
+          for i = 1, #highlightData / 3 do
+              local dataBlock = {
+                  _start = highlightData[(i - 1) * 3 + 1],
+                  _end = highlightData[(i - 1) * 3 + 2],
+                  words = highlightData[(i - 1) * 3 + 3]
+              }
+              local lastBlockEnd = (highlightData[(i - 2) * 3 + 2] or 1)
+
+              for i = dataBlock._start, dataBlock._end do
+                  label.highlightInfo[i] = dataBlock.words
+              end
+
+              for letter = lastBlockEnd, dataBlock._start - 1 do
+                  local tmpChar = string.byte(drawText:sub(letter, letter))
+                  local fillChar = (tmpChar == 10 or tmpChar == 32) and string.char(tmpChar) or string.char(127)
+
+                  tmpText = tmpText .. string.rep(fillChar, letterWidth[tmpChar])
+              end
+              tmpText = tmpText .. dataBlock.words
+          end
+
+          -- Fill the highlight label to the same size as default label
+          local finalBlockEnd = (highlightData[(#highlightData / 3 - 1) * 3 + 2] or 1)
+          for letter = finalBlockEnd, drawText:len() do
+              local tmpChar = string.byte(drawText:sub(letter, letter))
+              local fillChar = (tmpChar == 10 or tmpChar == 32) and string.char(tmpChar) or string.char(127)
+
+              tmpText = tmpText .. string.rep(fillChar, letterWidth[tmpChar])
+          end
+
+          labelHighlight:setText(tmpText)
       end
-
-      local highlightOptions = {}
-
-      for i = 1, #highlightData / 3 do
-        local dataBlock = { _start = highlightData[(i-1)*3+1], _end = highlightData[(i-1)*3+2], words = highlightData[(i-1)*3+3] }
-        text = text:gsub("%{(.-)%}", dataBlock.words, 1)
-
-        highlightData[(i-1)*3+1] = dataBlock._start - ((i-1) * 2)
-        highlightData[(i-1)*3+2] = dataBlock._end - (1 + (i-1) * 2)
-      end
-      --label:setText(text)
-      label:setColoredText(teste)
-
-      local drawText = label:getDrawText()
-      local tmpText = ""
-      for i = 1, #highlightData / 3 do
-        local dataBlock = { _start = highlightData[(i-1)*3+1], _end = highlightData[(i-1)*3+2], words = highlightData[(i-1)*3+3] }
-        local lastBlockEnd = (highlightData[(i-2)*3+2] or 1)
-
-        for i = dataBlock._start, dataBlock._end do
-          label.highlightInfo[i] = dataBlock.words
-        end
-
-        for letter = lastBlockEnd, dataBlock._start-1 do
-          local tmpChar = string.byte(drawText:sub(letter, letter))
-          local fillChar = (tmpChar == 10 or tmpChar == 32) and string.char(tmpChar) or string.char(127)
-
-          tmpText = tmpText .. string.rep(fillChar, letterWidth[tmpChar])
-        end
-        tmpText = tmpText .. dataBlock.words
-      end
-
-      local finalBlockEnd = (highlightData[(#highlightData/3-1)*3+2] or 1)
-      for letter = finalBlockEnd, drawText:len() do
-        local tmpChar = string.byte(drawText:sub(letter, letter))
-        local fillChar = (tmpChar == 10 or tmpChar == 32) and string.char(tmpChar) or string.char(127)
-
-        tmpText = tmpText .. string.rep(fillChar, letterWidth[tmpChar])
-      end
-    end
   end
-
 
   label.name = creatureName
   consoleBuffer.onMouseRelease = function(self, mousePos, mouseButton)
-    processMessageMenu(mousePos, mouseButton, nil, nil, nil, tab)
+      processMessageMenu(mousePos, mouseButton, nil, nil, nil, tab)
   end
-
-  label.onMouseMove = function(self, mousePos, mouseMoved)
-    local position = label:getTextPos(mousePos)
-    if position and label.highlightInfo[position] then
-      if not isPointerActive then
-        g_mouse.pushCursor('pointer')
-        isPointerActive = true
-      end
-    else
-      if isPointerActive then
-        g_mouse.popCursor()
-        isPointerActive = false
-      end
-    end
-  end
-
   label.onMouseRelease = function(self, mousePos, mouseButton)
-    local position = label:getTextPos(mousePos)
-    if position and label.highlightInfo[position] then
-      label:setCursor("pointer")
-    end
-    if mouseButton == MouseLeftButton then
-      local position = label:getTextPos(mousePos)
-      if position and label.highlightInfo[position] then
-        sendMessage(label.highlightInfo[position], npcTab)
+      if mouseButton == MouseLeftButton then
+          local position = label:getTextPos(mousePos)
+          if position and label.highlightInfo[position] then
+              sendMessage(label.highlightInfo[position], npcTab)
+          end
+      elseif mouseButton == MouseRightButton then
+          processMessageMenu(mousePos, mouseButton, creatureName, text, self, tab)
       end
-    elseif mouseButton == MouseRightButton then
-      processMessageMenu(mousePos, mouseButton, creatureName, text, self, tab)
-    end
   end
   label.onMousePress = function(self, mousePos, button)
-    if button == MouseLeftButton then clearSelection(consoleBuffer) end
+      if button == MouseLeftButton then
+          clearSelection(consoleBuffer)
+      end
   end
   label.onDragEnter = function(self, mousePos)
-    clearSelection(consoleBuffer)
-    return true
+      clearSelection(consoleBuffer)
+      return true
   end
   label.onDragLeave = function(self, droppedWidget, mousePos)
-    local text = {}
-    for selectionChild = consoleBuffer.selection.first, consoleBuffer.selection.last do
-      local label = self:getParent():getChildByIndex(selectionChild)
-      table.insert(text, label:getSelection())
-    end
-    consoleBuffer.selectionText = table.concat(text, '\n')
-    return true
+      local text = {}
+      for selectionChild = consoleBuffer.selection.first, consoleBuffer.selection.last do
+          local label = self:getParent():getChildByIndex(selectionChild)
+          table.insert(text, label:getSelection())
+      end
+      consoleBuffer.selectionText = table.concat(text, '\n')
+      return true
   end
   label.onDragMove = function(self, mousePos, mouseMoved)
-    local parent = self:getParent()
-    local parentRect = parent:getPaddingRect()
-    local selfIndex = parent:getChildIndex(self)
-    local child = parent:getChildByPos(mousePos)
+      local parent = self:getParent()
+      local parentRect = parent:getPaddingRect()
+      local selfIndex = parent:getChildIndex(self)
+      local child = parent:getChildByPos(mousePos)
 
-    -- find bonding children
-    if not child then
-      if mousePos.y < self:getY() then
-        for index = selfIndex - 1, 1, -1 do
-          local label = parent:getChildByIndex(index)
-          if label:getY() + label:getHeight() > parentRect.y then
-            if (mousePos.y >= label:getY() and mousePos.y <= label:getY() + label:getHeight()) or index == 1 then
-              child = label
-              break
-            end
+      -- find bonding children
+      if not child then
+          if mousePos.y < self:getY() then
+              for index = selfIndex - 1, 1, -1 do
+                  local label = parent:getChildByIndex(index)
+                  if label:getY() + label:getHeight() > parentRect.y then
+                      if (mousePos.y >= label:getY() and mousePos.y <= label:getY() + label:getHeight()) or index == 1 then
+                          child = label
+                          break
+                      end
+                  else
+                      child = parent:getChildByIndex(index + 1)
+                      break
+                  end
+              end
+          elseif mousePos.y > self:getY() + self:getHeight() then
+              for index = selfIndex + 1, parent:getChildCount(), 1 do
+                  local label = parent:getChildByIndex(index)
+                  if label:getY() < parentRect.y + parentRect.height then
+                      if (mousePos.y >= label:getY() and mousePos.y <= label:getY() + label:getHeight()) or index ==
+                          parent:getChildCount() then
+                          child = label
+                          break
+                      end
+                  else
+                      child = parent:getChildByIndex(index - 1)
+                      break
+                  end
+              end
           else
-            child = parent:getChildByIndex(index + 1)
-            break
+              child = self
           end
-        end
-      elseif mousePos.y > self:getY() + self:getHeight() then
-        for index = selfIndex + 1, parent:getChildCount(), 1 do
-          local label = parent:getChildByIndex(index)
-          if label:getY() < parentRect.y + parentRect.height then
-            if (mousePos.y >= label:getY() and mousePos.y <= label:getY() + label:getHeight()) or index == parent:getChildCount() then
-              child = label
-              break
-            end
+      end
+
+      if not child then
+          return false
+      end
+
+      local childIndex = parent:getChildIndex(child)
+
+      -- remove old selection
+      clearSelection(consoleBuffer)
+
+      -- update self selection
+      local textBegin = self:getTextPos(self:getLastClickPosition())
+      local textPos = self:getTextPos(mousePos)
+      self:setSelection(textBegin, textPos)
+
+      consoleBuffer.selection = {
+          first = math.min(selfIndex, childIndex),
+          last = math.max(selfIndex, childIndex)
+      }
+
+      -- update siblings selection
+      if child ~= self then
+          for selectionChild = consoleBuffer.selection.first + 1, consoleBuffer.selection.last - 1 do
+              parent:getChildByIndex(selectionChild):selectAll()
+          end
+
+          local textPos = child:getTextPos(mousePos)
+          if childIndex > selfIndex then
+              child:setSelection(0, textPos)
           else
-            child = parent:getChildByIndex(index - 1)
-            break
+              child:setSelection(string.len(child:getText()), textPos)
           end
-        end
-      else
-        child = self
-      end
-    end
-
-    if not child then return false end
-
-    local childIndex = parent:getChildIndex(child)
-
-    -- remove old selection
-    clearSelection(consoleBuffer)
-
-    -- update self selection
-    local textBegin = self:getTextPos(self:getLastClickPosition())
-    local textPos = self:getTextPos(mousePos)
-    self:setSelection(textBegin, textPos)
-
-    consoleBuffer.selection = { first = math.min(selfIndex, childIndex), last = math.max(selfIndex, childIndex) }
-
-    -- update siblings selection
-    if child ~= self then
-      for selectionChild = consoleBuffer.selection.first + 1, consoleBuffer.selection.last - 1 do
-        parent:getChildByIndex(selectionChild):selectAll()
       end
 
-      local textPos = child:getTextPos(mousePos)
-      if childIndex > selfIndex then
-        child:setSelection(0, textPos)
-      else
-        child:setSelection(string.len(child:getText()), textPos)
-      end
-    end
-
-    return true
+      return true
   end
 
   if consoleBuffer:getChildCount() > MAX_LINES then
-    local child = consoleBuffer:getFirstChild()
-    clearSelection(consoleBuffer)
-    child:destroy()
+      local child = consoleBuffer:getFirstChild()
+      clearSelection(consoleBuffer)
+      child:destroy()
   end
 end
 
@@ -1030,10 +1110,27 @@ function load()
 end
 
 function onTabChange(tabBar, tab)
+  local player = g_game.getLocalPlayer()
+  local message = consoleTextEdit:getText()
   if tab == defaultTab or tab == serverTab then
     consolePanel:getChildById('closeChannelButton'):disable()
+    if player then
+      player:setTyping(message ~= "")
+    end
   else
     consolePanel:getChildById('closeChannelButton'):enable()
+    player:setTyping(false)
+  end
+
+  if tab.isOnRedMessage then
+      tab:setColor('#dfdfdfff')
+      tab.isOnRedMessage = false
+  end
+
+  if tab.newMessageEvent ~= nil then
+      tab:setColor('#dfdfdfff')
+      removeEvent(tab.newMessageEvent)
+      tab.newMessageEvent = nil
   end
 end
 
@@ -1773,4 +1870,16 @@ function online()
   end
   scheduleEvent(function() consoleTabBar:selectTab(defaultTab) end, 500)
   scheduleEvent(function() ignoredChannels = {} end, 3000)
+end
+
+function onTextChange(text)
+  local player = g_game.getLocalPlayer()
+  local tab = tab or getCurrentTab()
+  if tab == defaultTab or tab == serverTab then
+    if player then
+      player:setTyping(text ~= "")
+    end
+  else
+    player:setTyping(false)
+  end
 end

@@ -58,7 +58,7 @@ ConsoleTabBarButton < MoveableTabBarButton
   image-border: 3
   color: #aaaaaa
   opacity: 0.6
-  font: lucida
+  font: verdana-11px-antialised
 
   $hover !checked:
     opacity: 0.9
@@ -342,6 +342,7 @@ UIWindow
     selection-color: gray
     selection-background-color: #FFF7E745
     visible: false
+    @onTextChange: onTextChange(self:getText())
 
   UIButton
     id: hideChatButton2
