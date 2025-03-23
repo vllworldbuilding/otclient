@@ -14,11 +14,14 @@ ConsoleLabel < UITextEdit
   selectable: false
   focusable: false
 
-ConsolePhantomLabel < UIWidget
+ConsolePhantomLabel < UILabel
   font: verdana-11px-antialised
   height: 14
+  color: yellow
   text-wrap: true
   text-auto-resize: true
+  selection-color: #111416
+  selection-background-color: #999999
 
 ConsoleTabBar < MoveableTabBar
   height: 28
@@ -107,7 +110,7 @@ UIWindow
     focusable: false
     size: 420 255
     image-border: 10
-    //image-source: /images/ui/background2
+    image-source: /images/ui/background2
     anchors.fill: parent
     phantom: true
     visible: false
