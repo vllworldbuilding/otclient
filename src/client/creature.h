@@ -187,6 +187,14 @@ minHeight,
     void clearText() { setText("", Color::white); }
     bool canShoot(int distance);
 
+    bool isCameraFollowing() const {
+        return m_cameraFollowing;
+    }
+
+    void setCameraFollowing(bool v) {
+        m_cameraFollowing = v;
+    }
+
 protected:
     virtual void terminateWalk();
     virtual void onWalking() {};
@@ -311,6 +319,7 @@ private:
     bool m_allowAppearWalk{ false };
     bool m_showTimedSquare{ false };
     bool m_showStaticSquare{ false };
+    bool m_cameraFollowing{ false };
 
     bool m_removed{ true };
     bool m_drawOutfitColor{ true };
