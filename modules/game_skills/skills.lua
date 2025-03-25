@@ -233,6 +233,14 @@ function update()
 end
 
 function online()
+    skillsTopButton = modules.client_topmenu.addTopRightToggleButton(
+        'skillsTopButton',
+        tr('Skills'), -- Nome do botão
+        '/images/topbuttons/terminal',  -- Ícone do botão
+        toggle  -- Função chamada ao clicar
+    )
+
+    skillsTopButton:setVisible(true)  -- Show the skills button when online
     skillsWindow:setupOnStart() -- load character window configuration
     refresh()
     onProfessionHeaderClick()
@@ -351,6 +359,7 @@ function updateHeight()
 end
 
 function offline()
+    skillsTopButton:setVisible(false)  -- Hide the skills button when offline
     skillsWindow:setParent(nil, true)
     if expSpeedEvent then
         expSpeedEvent:cancel()

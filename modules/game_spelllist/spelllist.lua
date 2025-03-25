@@ -79,7 +79,7 @@ end
 
 function online()
     if g_game.getFeature(GameSpellList) then
-        spelllistButton:show()
+        spelllistButton:hide()
     else
         spelllistButton:hide()
     end

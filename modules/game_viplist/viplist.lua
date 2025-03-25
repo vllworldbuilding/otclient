@@ -79,6 +79,11 @@ function controllerVip:onGameStart()
     vipWindow:setupOnStart() -- load character window configuration
     refresh()
     vipButton:setOn(vipButton:isOn())
+    vipTopButton = modules.client_topmenu.addTopRightToggleButton('vipTopButton', tr('Vip'), -- Nome do botão
+        '/images/topbuttons/terminal',  -- Ícone do botão
+        toggle  -- Função chamada ao clicar
+    )
+    vipTopButton:setVisible(true)    
 end
 
 function controllerVip:onGameEnd()
@@ -101,6 +106,7 @@ function controllerVip:onGameEnd()
         addGroupWindow:destroy()
         addGroupWindow = nil
     end
+    vipTopButton:setVisible(false)   
 end
 
 function loadVipInfo()
