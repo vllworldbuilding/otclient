@@ -3,6 +3,7 @@ PhantomMiniWindow
   height: 28
   &panelHeight: 28
   on: true
+  visible: false
 
   UIWidget
     id: offPanel

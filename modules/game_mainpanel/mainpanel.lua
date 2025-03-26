@@ -157,8 +157,8 @@ optionsController = Controller:new()
 optionsController:setUI('mainoptionspanel', modules.game_interface.getMainRightPanel())
 
 function optionsController:onInit()
-    createButton_large('Store shop', tr('Store shop'), '/images/options/store_large', toggleStore,
-    false, 8)
+  --[[  createButton_large('Store shop', tr('Store shop'), '/images/options/store_large', toggleStore,
+    false, 8)]]
 
 end
 
@@ -184,9 +184,16 @@ function optionsController:onGameStart()
         return (a.index or 1000) < (b.index or 1000)
     end)
     getOptionsPanel:reorderChildren(children)
+    shopTopButton = modules.client_topmenu.addTopRightToggleButton(
+        'shopTopButton',
+        tr('Store Shop'), -- Nome do botão
+        '/images/topbuttons/terminal', toggleStore, false, 8
+    )  -- Função chamada ao clicar
+    shopTopButton:setVisible(true)  -- Show the skills button when online  
 end
 
 function optionsController:onGameEnd()
+    shopTopButton:setVisible(false)  -- Show the skills button when online  
 end
 
 function changeOptionsSize()

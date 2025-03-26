@@ -99,6 +99,13 @@ function online()
     if g_game.getFeature(GameUnjustifiedPoints) then
         unjustifiedPointsWindow:setupOnStart() -- load character window configuration
         unjustifiedPointsButton:show()
+        unjustifiedPointsTopButton = modules.client_topmenu.addTopRightToggleButton(
+            'unjustifiedPointsTopButton',
+            tr('Unjustified Points'), -- Nome do botão
+            '/images/topbuttons/terminal',  -- Ícone do botão
+            toggle  -- Função chamada ao clicar
+        )
+        unjustifiedPointsTopButton:setVisible(true)  -- Show the skills button when online
     else
         unjustifiedPointsButton:hide()
         unjustifiedPointsWindow:close()
@@ -110,6 +117,7 @@ end
 function offline()
     if g_game.getFeature(GameUnjustifiedPoints) then
         unjustifiedPointsWindow:setParent(nil, true)
+        unjustifiedPointsTopButton:setVisible(false)  -- Hide the skills button when offline
     end
 end
 

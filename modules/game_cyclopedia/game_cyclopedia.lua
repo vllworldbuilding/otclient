@@ -47,7 +47,13 @@ function controllerCyclopedia:onGameStart()
         CyclopediaButton:setOn(false)
         ButtonBestiary = modules.game_mainpanel.addToggleButton("bosstiary", tr("Open Bosstiary dialog"),
             "/images/options/ButtonBosstiary", function() toggle("bosstiary") end, false, 17)
-
+            CyclopediaTopButton = modules.client_topmenu.addTopRightToggleButton(
+            'CyclopediaTopButton',
+            tr('Cyclopedia'), -- Nome do botão
+            '/images/topbuttons/terminal',  -- Ícone do botão
+            toggle  -- Função chamada ao clicar
+        )
+        CyclopediaTopButton:setVisible(true)  -- Show the skills button when online
         contentContainer = controllerCyclopedia.ui:recursiveGetChildById('contentContainer')
         buttonSelection = controllerCyclopedia.ui:recursiveGetChildById('buttonSelection')
         items = buttonSelection:recursiveGetChildById('items')
@@ -205,6 +211,7 @@ function controllerCyclopedia:onGameEnd()
     saveFilters()
     Keybind.delete("Windows", "Show/hide Bosstiary Tracker")
     Keybind.delete("Windows", "Show/hide Bestiary Tracker")
+    CyclopediaTopButton:setVisible(false)  -- Show the skills button when online
 end
 
 function controllerCyclopedia:onTerminate()
