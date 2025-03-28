@@ -428,7 +428,7 @@ function toggle()
     end
 --XXXXX ISSO AQUI EDITA A VISIBILIDADE DO TOPMENU
     if menu:isVisible() then
-    --    menu:hide()
+        menu:hide()
         modules.game_interface.getRootPanel():addAnchor(AnchorTop, 'parent', AnchorTop)
     else
         menu:show()

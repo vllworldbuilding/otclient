@@ -236,7 +236,7 @@ function online()
     skillsTopButton = modules.client_topmenu.addTopRightToggleButton(
         'skillsTopButton',
         tr('Skills'), -- Nome do botão
-        '/images/topbuttons/terminal',  -- Ícone do botão
+        '/images/topbuttons/skills',  -- Ícone do botão
         toggle  -- Função chamada ao clicar
     )
 

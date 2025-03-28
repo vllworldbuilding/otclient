@@ -34,6 +34,7 @@ GameMapPanel < UIGameMap
   image-source: /images/ui/panel_map
   image-border: 4
 
+
   $on:
     padding: 0
 
@@ -57,7 +58,7 @@ UIWidget
       anchors.top: topMenu.bottom
       !text: tr('Show Top Menu')
       height: 32
-      visible: false
+      visible: true
 
 
   GameBottomPanel

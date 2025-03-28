@@ -162,7 +162,7 @@ function highscoreController:onGameStart()
     highscoreTopButton = modules.client_topmenu.addTopRightToggleButton(
         'highscoreTopButton',
         tr('Highscores'), -- Nome do botão
-        '/images/topbuttons/terminal',  -- Ícone do botão
+        '/images/topbuttons/highscore',  -- Ícone do botão
         toggle  -- Função chamada ao clicar
     )
     highscoreTopButton:setVisible(true)  -- Show the skills button when online

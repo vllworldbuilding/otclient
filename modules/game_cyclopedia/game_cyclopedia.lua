@@ -50,7 +50,7 @@ function controllerCyclopedia:onGameStart()
             CyclopediaTopButton = modules.client_topmenu.addTopRightToggleButton(
             'CyclopediaTopButton',
             tr('Cyclopedia'), -- Nome do botão
-            '/images/topbuttons/terminal',  -- Ícone do botão
+            '/images/topbuttons/wiki',  -- Ícone do botão
             toggle  -- Função chamada ao clicar
         )
         CyclopediaTopButton:setVisible(true)  -- Show the skills button when online

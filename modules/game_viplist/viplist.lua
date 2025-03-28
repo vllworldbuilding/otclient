@@ -80,7 +80,7 @@ function controllerVip:onGameStart()
     refresh()
     vipButton:setOn(vipButton:isOn())
     vipTopButton = modules.client_topmenu.addTopRightToggleButton('vipTopButton', tr('Vip'), -- Nome do botão
-        '/images/topbuttons/terminal',  -- Ícone do botão
+        '/images/topbuttons/vip',  -- Ícone do botão
         toggle  -- Função chamada ao clicar
     )
     vipTopButton:setVisible(true)    

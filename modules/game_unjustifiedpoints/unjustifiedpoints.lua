@@ -102,7 +102,7 @@ function online()
         unjustifiedPointsTopButton = modules.client_topmenu.addTopRightToggleButton(
             'unjustifiedPointsTopButton',
             tr('Unjustified Points'), -- Nome do botão
-            '/images/topbuttons/terminal',  -- Ícone do botão
+            '/images/topbuttons/skull',  -- Ícone do botão
             toggle  -- Função chamada ao clicar
         )
         unjustifiedPointsTopButton:setVisible(true)  -- Show the skills button when online

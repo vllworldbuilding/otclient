@@ -191,13 +191,13 @@ function controller:onInit()
         g_settings.setDefault(k, obj.value)
     end
 
-    extraWidgets.audioButton = modules.client_topmenu.addTopRightToggleButton('audioButton', tr('AudioXXXXX'),
+    extraWidgets.audioButton = modules.client_topmenu.addTopRightToggleButton('audioButton', tr('Audio'),
         '/images/topbuttons/button_mute_up', function() toggleOption('enableAudio') end)
 
-    extraWidgets.optionsButton = modules.client_topmenu.addTopRightToggleButton('optionsButton', tr('OptionsXXXXX'),
+    extraWidgets.optionsButton = modules.client_topmenu.addTopRightToggleButton('optionsButton', tr('Options'),
         '/images/topbuttons/button_options', toggle)
 
-    extraWidgets.logoutButton = modules.client_topmenu.addTopRightToggleButton('logoutButton', tr('ExitXXXXX'),
+    extraWidgets.logoutButton = modules.client_topmenu.addTopRightToggleButton('logoutButton', tr('Exit'),
         '/images/topbuttons/logout', toggle)
 
     panels.generalPanel = g_ui.loadUI('styles/controls/general', controller.ui.optionsTabContent)

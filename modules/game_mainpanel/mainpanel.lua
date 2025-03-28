@@ -187,7 +187,7 @@ function optionsController:onGameStart()
     shopTopButton = modules.client_topmenu.addTopRightToggleButton(
         'shopTopButton',
         tr('Store Shop'), -- Nome do botão
-        '/images/topbuttons/terminal', toggleStore, false, 8
+        '/images/topbuttons/shop', toggleStore, false, 8
     )  -- Função chamada ao clicar
     shopTopButton:setVisible(true)  -- Show the skills button when online  
 end

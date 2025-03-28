@@ -317,7 +317,7 @@ end
 function onGameStart()
     battleWindow:setupOnStart() -- load character window configuration
     battleTopButton = modules.client_topmenu.addTopRightToggleButton('battleTopButton', tr('Battle'), -- Nome do botão
-        '/images/topbuttons/terminal',  -- Ícone do botão
+        '/images/topbuttons/battle',  -- Ícone do botão
         toggle  -- Função chamada ao clicar
     )
     battleTopButton:setVisible(true)
