@@ -207,7 +207,7 @@ PhantomMiniWindow < UIMiniWindow
   phantom: false
   focusable: false
   &moveOnlyToMain: true
-
+//xxxxx
   UIWidget
     image-source: /images/ui/background
     image-repeated: true
