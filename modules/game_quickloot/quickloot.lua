@@ -252,7 +252,8 @@ function QuickLoot.Define()
 			{ color = "#484848", name = "Weapons:\nDistance", type = 19 },
 			{ color = "#414141", name = "Weapons:\nSwords", type = 20 },
 			{ color = "#484848", name = "Weapons:\nWands", type = 21 },
-			--{ color = "#414141", name = "Quivers" , type = 25 },
+			--{ color = "#484848", name = "Gloves", type = 22 },
+            --{ color = "#414141", name = "Quivers" , type = 25 },
 
 		}
 		-- LuaFormatter on
