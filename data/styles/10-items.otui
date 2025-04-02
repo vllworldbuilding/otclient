@@ -86,20 +86,6 @@ MainInventoryItem < UIWidget
       opacity: 1
 
   UIWidget
-    id: gloves
-    image-source: /images/inventory/inventory_finger
-    anchors.centerIn: parent
-    phantom: true
-    enabled: false
-    size: 32 32
-
-    $disabled:
-      opacity: 0
-
-    $!disabled:
-      opacity: 1
-
-  UIWidget
     id: helmet
     image-source: /images/inventory/inventory_head
     anchors.centerIn: parent

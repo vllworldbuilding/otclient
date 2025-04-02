@@ -293,13 +293,6 @@ PhantomMiniWindow
       &slotPosition: {x = 65535, y = 9, z = 0}
 
     MainInventoryItem
-      id: gloves
-      anchors.top: sword.bottom
-      anchors.right: ring.left
-      margin-top: 3
-      &slotPosition: {x = 65535, y = 12, z = 0}
-
-    MainInventoryItem
       id: armor
       anchors.top: helmet.bottom
       anchors.left: helmet.left

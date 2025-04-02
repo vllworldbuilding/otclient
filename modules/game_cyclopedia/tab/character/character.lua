@@ -141,10 +141,6 @@ Cyclopedia.InventorySlotStyles = {
         icon = "/images/game/slots/inventory-finger",
         name = "FingerSlot"
     },
-    [InventorySlotGloves] = {
-        icon = "/images/game/slots/inventory-finger",
-        name = "GlovesSlot"
-    },
     [InventorySlotAmmo] = {
         icon = "/images/game/slots/inventory-hip",
         name = "AmmoSlot"

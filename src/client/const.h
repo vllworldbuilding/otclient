@@ -102,7 +102,6 @@ namespace Otc
         InventorySlotRing,
         InventorySlotAmmo,
         InventorySlotPurse,
-        InventorySlotGloves,
         InventorySlotExt1,
         InventorySlotExt2,
         InventorySlotExt3,
