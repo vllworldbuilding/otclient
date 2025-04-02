@@ -297,7 +297,7 @@ PhantomMiniWindow
       anchors.top: sword.bottom
       anchors.right: ring.left
       margin-top: 3
-      &slotPosition: {x = 65535, y = 11, z = 0}
+      &slotPosition: {x = 65535, y = 12, z = 0}
 
     MainInventoryItem
       id: armor
