@@ -43,6 +43,7 @@ Panel
     font: verdana-11px-rounded
     font-scale: 4
     shader: Map - Party
+    visible: false
 
   MiniQtScrollableWindow
     id: showOffWindow

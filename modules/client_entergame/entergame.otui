@@ -29,6 +29,8 @@ EnterGameWindow
   &disableToken : false
   size: 280 302
   @onEnter: EnterGame.doLogin()
+  margin-top: 131
+
 
 
 

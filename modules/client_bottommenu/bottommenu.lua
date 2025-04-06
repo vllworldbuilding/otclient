@@ -24,7 +24,7 @@ local default_info = {
     -- hint 1
     {
         image = "images/randomhint",
-        Title = "Enabling Boosted Creature Panel",
+        Title = "The Middlegard Herald",
         description = "Boosted creatures panel requires configuring a webservice (init.lua) and preloading a client version by either setting one server in Servers_init (init.lua) or by altering entergame.lua.\n\nFor more hints, visit:\t\t https://github.com/mehah/otclient/wiki"
     },
 
