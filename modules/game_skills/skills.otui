@@ -80,9 +80,69 @@ MiniWindow
       SkillNameLabel
         !text: tr('Level')
       SkillValueLabel
-      RedPercentPanel
+      ImageSkill
+        image-source: /images/icons/icon_exp
+        image-size: 9 9
+      SkillPercentPanel
+        background-color: green
 
     SkillButton
+      id: magiclevel
+      SkillNameLabel
+        !text: tr('Magic Level')
+      SkillValueLabel
+      ImageSkill
+        image-source: /images/icons/icon_magic
+        image-size: 9 9
+      SkillPercentPanel
+        background-color: red
+
+    SkillButton
+      id: skillId17
+      SkillNameLabel
+        !text: tr('Music')
+      SkillValueLabel
+      ImageSkill
+        image-source: /images/icons/icon_music
+        image-size: 9 9
+      SkillPercentPanel
+
+    SkillButton
+      id: skillId18
+      SkillNameLabel
+        !text: tr('Lore')
+      SkillValueLabel
+      ImageSkill
+        image-source: /images/icons/icon_lore
+        image-size: 9 9
+      SkillPercentPanel
+
+    SkillButton
+      id: skillId20
+      SkillNameLabel
+        !text: tr('Languages')
+      SkillValueLabel
+      ImageSkill
+        image-source: /images/icons/icon_languages
+        image-size: 9 9
+      SkillPercentPanel
+
+    SkillButton
+      id: skillId19
+      SkillNameLabel
+        !text: tr('Inscription')
+      SkillValueLabel
+      ImageSkill
+        image-source: /images/icons/icon_inscription
+        image-size: 9 9
+      SkillPercentPanel
+ 
+    HorizontalSeparator
+      margin-top: 5
+      margin-bottom: 5
+
+    SkillButton
+      visible: false
       id: health
       height: 15
       SkillNameLabel
@@ -90,6 +150,7 @@ MiniWindow
       SkillValueLabel
 
     SkillButton
+      visible: false    
       id: mana
       height: 15
       SkillNameLabel
@@ -136,17 +197,50 @@ MiniWindow
         !text: tr('Offline Training')
       SkillValueLabel
       RedPercentPanel
+      
+    HorizontalSeparator
+      margin-top: 5
+      margin-bottom: 5
 
-    SkillButton
-      id: magiclevel
-      SkillNameLabel
-        !text: tr('Magic Level')
-      SkillValueLabel
-      ImageSkill
-        image-source: /images/icons/icon_magic
-        image-size: 9 9
-      SkillPercentPanel
-        background-color: red
+    UIButton
+      id: combatSkillsButton
+      height: 20
+      margin-top: 5
+      visible: false
+      background-color: #00000066
+      border: 1 #111111
+      &onClick: onProfessionHeaderClick
+      
+      $pressed:
+        background-color: #00000099
+      
+      Label
+        !text: tr('View Combat Skills')
+        font: verdana-11px-monochrome
+        text-align: center
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.verticalCenter: parent.verticalCenter
+        color: #FFFFFF      
+
+    UIButton
+      id: professionSkillsButton
+      height: 20
+      margin-top: 5
+      visible: true
+      background-color: #00000066
+      border: 1 #111111
+      &onClick: onProfessionHeaderClick
+      
+      $pressed:
+        background-color: #00000099
+      
+      Label
+        !text: tr('View Economic Skills')
+        font: verdana-11px-monochrome
+        text-align: center
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.verticalCenter: parent.verticalCenter
+        color: #FFFFFF      
 
     SkillButton
       id: skillId0
@@ -217,67 +311,167 @@ MiniWindow
         image-source: /images/icons/icon_fishing
         image-size: 9 9
       SkillPercentPanel
-        
+
+    SkillButton
+      id: skillId7
+      SkillNameLabel
+        !text: tr('Mining')
+      SkillValueLabel
+      ImageSkill
+        image-source: /images/icons/icon_mining
+        image-size: 9 9
+      SkillPercentPanel
+
+    SkillButton
+      id: skillId8
+      SkillNameLabel
+        !text: tr('Metalworking')
+      SkillValueLabel
+      ImageSkill
+        image-source: /images/icons/icon_metalworking
+        image-size: 9 9
+      SkillPercentPanel
+
+    SkillButton
+      id: skillId9
+      SkillNameLabel
+        !text: tr('Woodworking')
+      SkillValueLabel
+      ImageSkill
+        image-source: /images/icons/icon_woodworking
+        image-size: 9 9
+      SkillPercentPanel
+
+    SkillButton
+      id: skillId10
+      SkillNameLabel
+        !text: tr('Hunting')
+      SkillValueLabel
+      ImageSkill
+        image-source: /images/icons/icon_hunting
+        image-size: 9 9
+      SkillPercentPanel
+
+    SkillButton
+      id: skillId11
+      SkillNameLabel
+        !text: tr('Farming')
+      SkillValueLabel
+      ImageSkill
+        image-source: /images/icons/icon_farming
+        image-size: 9 9
+      SkillPercentPanel
+
+    SkillButton
+      id: skillId12
+      SkillNameLabel
+        !text: tr('Cooking')
+      SkillValueLabel
+      ImageSkill
+        image-source: /images/icons/icon_cooking
+        image-size: 9 9
+      SkillPercentPanel
+
+    SkillButton
+      id: skillId13
+      SkillNameLabel
+        !text: tr('Crafting')
+      SkillValueLabel
+      ImageSkill
+        image-source: /images/icons/icon_crafting
+        image-size: 9 9
+      SkillPercentPanel
+
+    SkillButton
+      id: skillId14
+      SkillNameLabel
+        !text: tr('Herblore')
+      SkillValueLabel
+      ImageSkill
+        image-source: /images/icons/icon_herblore
+        image-size: 9 9
+      SkillPercentPanel
+
+    SkillButton
+      id: skillId15
+      SkillNameLabel
+        !text: tr('Alchemy')
+      SkillValueLabel
+      ImageSkill
+        image-source: /images/icons/icon_alchemy
+        image-size: 9 9
+      SkillPercentPanel
+
+    SkillButton
+      id: skillId16
+      SkillNameLabel
+        !text: tr('Archaeology')
+      SkillValueLabel
+      ImageSkill
+        image-source: /images/icons/icon_archaeology
+        image-size: 9 9
+      SkillPercentPanel
+      
     HorizontalSeparator
       margin-top: 5
       margin-bottom: 5
 
     SmallSkillButton
-      id: skillId7
+      id: skillId21
       SkillNameLabel
         !text: tr('Critical Hit Chance')
       SkillValueLabel
 
     SmallSkillButton
-      id: skillId8
+      id: skillId22
       SkillNameLabel
         !text: tr('Critical Hit Damage')
       SkillValueLabel
 
     SmallSkillButton
-      id: skillId9
+      id: skillId23
       SkillNameLabel
         !text: tr('Life Leech Chance')
       SkillValueLabel
 
     SmallSkillButton
-      id: skillId10
+      id: skillId24
       SkillNameLabel
         !text: tr('Life Leech Amount')
       SkillValueLabel
 
     SmallSkillButton
-      id: skillId11
+      id: skillId25
       SkillNameLabel
         !text: tr('Mana Leech Chance')
       SkillValueLabel
 
     SmallSkillButton
-      id: skillId12
+      id: skillId26
       SkillNameLabel
         !text: tr('Mana Leech Amount')
       SkillValueLabel
 
     SmallSkillButton
-      id: skillId13
+      id: skillId27
       SkillNameLabel
         !text: tr('Fatal')
       SkillValueLabel
 
     SmallSkillButton
-      id: skillId14
+      id: skillId28
       SkillNameLabel
         !text: tr('Dodge')
       SkillValueLabel
 
     SmallSkillButton
-      id: skillId15
+      id: skillId29
       SkillNameLabel
         !text: tr('Momentum')
       SkillValueLabel
 
     SmallSkillButton
-      id: skillId16
+      id: skillId30
       SkillNameLabel
         !text: tr('Transcendence')
       SkillValueLabel
