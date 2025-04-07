@@ -193,7 +193,7 @@ namespace Otc
     enum FluidsType : uint8_t
     {
         FluidNone = 0,
-        FluidWater,
+        FluidSaltWater,
         FluidMana,
         FluidBeer,
         FluidOil,
@@ -212,7 +212,8 @@ namespace Otc
         FluidMead,
         FluidInk,
         FluidCandy,
-        FluidChocolate
+        FluidChocolate,
+        FluidFreshWater
     };
 
     enum FightModes : uint8_t
