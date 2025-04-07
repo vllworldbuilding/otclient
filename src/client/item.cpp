@@ -178,7 +178,7 @@ void Item::updatePatterns()
                 case Otc::FluidNone:
                     color = Otc::FluidTransparent;
                     break;
-                case Otc::FluidWater:
+                case Otc::FluidSaltWater:
                     color = Otc::FluidBlue;
                     break;
                 case Otc::FluidMana:
@@ -237,6 +237,9 @@ void Item::updatePatterns()
                     break;
                 case Otc::FluidChocolate:
                     color = Otc::FluidBrown;
+                    break;
+                case Otc::FluidFreshWater:
+                    color = Otc::FluidBlue;
                     break;
                 default:
                     color = Otc::FluidTransparent;
