@@ -99,7 +99,7 @@ public:
     uint64_t getTotalMoney()
     {
         const uint64_t bankBalance = getResourceBalance(Otc::RESOURCE_BANK_BALANCE);
-        const uint64_t equippedBalance = getResourceBalance(Otc::RESOURCE_GOLD_EQUIPPED);
+        const uint64_t equippedBalance = getResourceBalance(Otc::RESOURCE_COPPER_EQUIPPED);
         return bankBalance + equippedBalance;
     }
 

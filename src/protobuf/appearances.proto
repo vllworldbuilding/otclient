@@ -263,9 +263,9 @@ message AppearanceFlagCyclopedia {
 }
 
 message SpecialMeaningAppearanceIds {
-	optional uint32 gold_coin_id = 1;
-	optional uint32 platinum_coin_id = 2;
-	optional uint32 crystal_coin_id = 3;
+	optional uint32 copper_coin_id = 1;
+	optional uint32 silver_coin_id = 2;
+	optional uint32 gold_coin_id = 3;
 	optional uint32 tibia_coin_id = 4;
 	optional uint32 stamped_letter_id = 5;
 	optional uint32 supply_stash_id = 6;

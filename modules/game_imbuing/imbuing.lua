@@ -32,7 +32,7 @@ function init()
     local player = g_game.getLocalPlayer()
     if player then
         bankGold = player:getResourceBalance(ResourceTypes.BANK_BALANCE)
-        inventoryGold = player:getResourceBalance(ResourceTypes.GOLD_EQUIPPED)
+        inventoryGold = player:getResourceBalance(ResourceTypes.COPPER_EQUIPPED)
         imbuingWindow.balance:setText(tr('Balance') .. ':\n' .. (player:getTotalMoney()))
     end
 
@@ -204,7 +204,7 @@ function selectSlot(widget, slotId, activeSlot)
             clearConfirmWindow = displayGeneralBox(tr('Confirm Clearing'),
                                                    tr(
                                                        'Do you wish to spend ' .. activeSlot[3] ..
-                                                           ' gold coins to clear the imbuement "' ..
+                                                           ' copper coins to clear the imbuement "' ..
                                                            activeSlot[1]['name'] .. '" from your item?'), {
                 {
                     text = tr('Yes'),
@@ -252,7 +252,7 @@ function selectSlot(widget, slotId, activeSlot)
                                                    'You are about to imbue your item with "' .. selectedImbue['name'] ..
                                                        '".\nYour chance to succeed is ' .. successRate ..
                                                        '%. It will consume the required astral sources and ' .. cost ..
-                                                       ' gold coins.\nDo you wish to proceed?', {
+                                                       ' copper coins.\nDo you wish to proceed?', {
                 {
                     text = tr('Yes'),
                     callback = yesCallback
@@ -315,12 +315,12 @@ end
 function Imbuing.onResourcesBalanceChange(balance, oldBalance, type)
     if type == ResourceTypes.BANK_BALANCE then
         bankGold = balance
-    elseif type == ResourceTypes.GOLD_EQUIPPED then
+    elseif type == ResourceTypes.COPPER_EQUIPPED then
         inventoryGold = balance
     end
     local player = g_game.getLocalPlayer()
     if player then
-        if type == ResourceTypes.BANK_BALANCE or type == ResourceTypes.GOLD_EQUIPPED then
+        if type == ResourceTypes.BANK_BALANCE or type == ResourceTypes.COPPER_EQUIPPED then
             imbuingWindow.balance:setText(tr('Balance') .. ':\n' .. (player:getTotalMoney()))
         end
     end
