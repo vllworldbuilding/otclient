@@ -587,7 +587,7 @@ local function updateBalance(balance)
     end
     information.balance = balance
 
-    balanceLabel:setText('Balance: ' .. balance .. ' gold')
+    balanceLabel:setText('Balance: ' .. balance .. ' copper')
     balanceLabel:resizeToText()
 end
 

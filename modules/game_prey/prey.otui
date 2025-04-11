@@ -467,7 +467,7 @@ GoldLabel < FlatPanel
     anchors.right: parent.right
     anchors.verticalCenter: parent.verticalCenter
     image-source: /images/game/prey/prey_gold
-    tooltip: Gold Coins
+    tooltip: Copper Coins
 
   UIWidget
     id: text

@@ -1,6 +1,6 @@
 BUY = 1
 SELL = 2
-CURRENCY = 'gold'
+CURRENCY = 'copper'
 CURRENCY_DECIMAL = false
 WEIGHT_UNIT = 'oz'
 LAST_INVENTORY = 10
@@ -512,7 +512,7 @@ function checkSellAllTooltip()
             if amount > 0 then
                 if data and amount > 0 then
                     info = info .. (not first and '\n' or '') .. amount .. ' ' .. data.name .. ' (' .. data.price *
-                               amount .. ' gold)'
+                               amount .. ' copper)'
 
                     total = total + (data.price * amount)
                     if first then
@@ -523,7 +523,7 @@ function checkSellAllTooltip()
         end
     end
     if info ~= '' then
-        info = info .. '\nTotal: ' .. total .. ' gold'
+        info = info .. '\nTotal: ' .. total .. ' copper'
         sellAllButton:setTooltip(info)
     else
         sellAllButton:setEnabled(false)

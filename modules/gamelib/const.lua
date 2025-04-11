@@ -430,7 +430,7 @@ ChannelEvent = {
 
 ResourceTypes = {
     BANK_BALANCE = 0,
-    GOLD_EQUIPPED = 1,
+    COPPER_EQUIPPED = 1,
     PREY_WILDCARDS = 10,
     DAILYREWARD_STREAK = 20,
     DAILYREWARD_JOKERS = 21,

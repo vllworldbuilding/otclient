@@ -296,7 +296,7 @@ function Cyclopedia.setActiveSlot(widget, slot, slotData, data, bossId)
     end
 
     widget.ActivedBoss.RemoveButton:setTooltip(string.format(
-        "It will cost you %s gold to remove the currently selected boss from this slot.",
+        "It will cost you %s copper to remove the currently selected boss from this slot.",
         comma_value(slotData.removePrice)))
 end
 
