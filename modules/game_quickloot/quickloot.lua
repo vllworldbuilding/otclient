@@ -228,7 +228,7 @@ function QuickLoot.Define()
         -- LuaFormatter off
 		local slotBags = {
 			{ color = "#484848", name = "Unassigned", type = 31 },
-			{ color = "#414141", name = "Gold", type = 30 },
+			{ color = "#414141", name = "Copper", type = 30 },
 			{ color = "#484848", name = "Armors", type = 1 },
 			{ color = "#414141", name = "Amulets", type = 2  },
 			{ color = "#484848", name = "Boots", type = 3 },

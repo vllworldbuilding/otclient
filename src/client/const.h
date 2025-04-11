@@ -414,8 +414,8 @@ namespace Otc
     };
     enum PreyResourceType_t : uint8_t
     {
-        PREY_RESOURCETYPE_BANK_GOLD = 0,
-        PREY_RESOURCETYPE_INVENTORY_GOLD = 1,
+        PREY_RESOURCETYPE_BANK_COPPER = 0,
+        PREY_RESOURCETYPE_INVENTORY_COPPER = 1,
         PREY_RESOURCETYPE_PREY_BONUS_REROLLS = 10
     };
     enum PreyBonusType_t : uint8_t
@@ -683,7 +683,7 @@ namespace Otc
     enum ResourceTypes_t : uint8_t
     {
         RESOURCE_BANK_BALANCE = 0,
-        RESOURCE_GOLD_EQUIPPED = 1,
+        RESOURCE_COPPER_EQUIPPED = 1,
         RESOURCE_CURRENCY_CUSTOM_EQUIPPED = 2,
         RESOURCE_PREY_WILDCARDS = 10,
         RESOURCE_DAILYREWARD_STREAK = 20,

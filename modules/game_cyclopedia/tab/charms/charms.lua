@@ -462,7 +462,7 @@ function Cyclopedia.actionCharmButton(widget)
 
         if not confirmWindow then
             confirmWindow = displayGeneralBox(tr("Confirm Charm Removal"),
-                tr("Do you want to remove the Charm %s from this creature? This will cost you %s gold pieces.",
+                tr("Do you want to remove the Charm %s from this creature? This will cost you %s copper pieces.",
                     data.name, comma_value(data.removeRuneCost)), {
                     {
                         text = tr("Yes"),

@@ -400,7 +400,7 @@ function Cyclopedia.acceptTransfer()
 
         if not confirmWindow then
             confirmWindow = displayGeneralBox(tr("Confirm House Action"), tr(
-                "Do you want to accept the house transfer offered by %s for the property '%s'?\nThe transfer is scheduled for %s.\nThe transfer price was set to %s.\n\nMake sure to have enough gold in your bank account to pay the costs for this house transfer and the next rent.\nRemember to edit the door rights as only the guest list will be reset after the transfer!",
+                "Do you want to accept the house transfer offered by %s for the property '%s'?\nThe transfer is scheduled for %s.\nThe transfer price was set to %s.\n\nMake sure to have enough copper in your bank account to pay the costs for this house transfer and the next rent.\nRemember to edit the door rights as only the guest list will be reset after the transfer!",
                 house.owner, house.name, transferTime, comma_value(house.transferValue)), {
                 {
                     text = tr("Yes"),

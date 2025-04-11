@@ -608,7 +608,7 @@ end
 function Prey.onResourcesBalanceChange(balance, oldBalance, type)
     if type == ResourceTypes.BANK_BALANCE then -- bank gold
         bankGold = balance
-    elseif type == ResourceTypes.GOLD_EQUIPPED then -- inventory gold
+    elseif type == ResourceTypes.COPPER_EQUIPPED then -- inventory gold
         inventoryGold = balance
     elseif type == ResourceTypes.PREY_WILDCARDS then -- bonus rerolls
         bonusRerolls = balance
